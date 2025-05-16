@@ -1,0 +1,1 @@
+HI3516DV500 not support mipi_tx(vo sync larger than 1080p60), sample_vo 1 2 not support!

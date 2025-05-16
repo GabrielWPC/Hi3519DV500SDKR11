@@ -1,0 +1,12 @@
+include ../../Makefile.param
+
+COMMON_DIR:=$(PWD)/../../../common
+CONFIG_OT_SVP_SEC_SUPPORT = y
+include $(PWD)/../../../Makefile.param
+
+MPI_LIBS += $(REL_LIB)/libss_mpi_km.a
+MPI_LIBS += $(REL_LIB)/libsmmz_agent.a
+MPI_LIBS += $(REL_LIB)/libteec.a
+CFLAGS += -I$(PWD)/../../../common
+CFLAGS += -fstack-protector-strong
+

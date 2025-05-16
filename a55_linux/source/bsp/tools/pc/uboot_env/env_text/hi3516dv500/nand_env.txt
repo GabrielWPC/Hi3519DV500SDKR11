@@ -1,0 +1,16 @@
+arch=arm
+baudrate=115200
+board=hi3516dv500
+board_name=hi3516dv500
+bootdelay=2
+cpu=armv8
+ethact=gmac0
+loadaddr=0x40080000
+soc=hi3516dv500
+stderr=serial
+stdin=serial
+stdout=serial
+vendor=vendor
+verify=n
+bootargs=mem=132928K console=ttyAMA0,115200 clk_ignore_unused root=ubi0:ubifs rootfstype=ubifs rw ubi.mtd=4 mtdparts=nand:512K(boot),512K(env),512K(bl31),13M(kernel),32M(rootfs)
+bootcmd=nand read 0x40010000 0x100000 0x80000; ipcboot bl31 0x40010000; nand read 0x44000000 0x180000 0xd00000; ipcboot uimgfdt 0x44000000

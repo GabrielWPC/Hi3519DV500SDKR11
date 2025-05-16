@@ -1,0 +1,9 @@
+include ../../Makefile.param
+
+COMMON_DIR:=$(PWD)/../../../common
+include $(PWD)/../../../Makefile.param
+
+MPI_LIBS += $(REL_LIB)/libteec.a
+CFLAGS += -I$(PWD)/../../../common
+CFLAGS += -fstack-protector-strong
+

@@ -1,0 +1,1 @@
+cd /home/g-3519dv500-dev/a55_linux/source/mpp/sample/venc

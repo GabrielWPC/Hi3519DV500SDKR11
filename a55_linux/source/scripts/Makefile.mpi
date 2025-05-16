@@ -1,0 +1,51 @@
+include $(MAKE_MACO_FILE)
+ifneq ($(CONFIG_OS_TYPE), liteos)
+LIB_S   := $(REL_LIB)/lib$(LIB_NAME).so
+endif
+LIB_A   := $(REL_LIB)/lib$(LIB_NAME).a
+
+OBJ_DIR := $(TEMP_PATH)/$(subst $(SDK_PATH)/,,$(CURDIR))/obj
+
+ifeq ($(MPI_SRC_C),)
+MPI_SRC_C := $(foreach file, $(MPI_SRC_DIR), $(notdir $(wildcard $(file)/*.c)))
+endif
+MPI_OBJS  := $(MPI_SRC_C:%.c=$(OBJ_DIR)/%.o)
+
+COMPILE=$(CC) $(LIBS_CFLAGS) $(MPI_CFLAGS) -c -o $(OBJ_DIR)/$(*F).o $<
+
+.PHONY: all clean prepare lib$(LIB_NAME)_s lib$(LIB_NAME)_a
+
+all: lib$(LIB_NAME)_s lib$(LIB_NAME)_a
+
+prepare:
+	@echo -e "\e[0;32;1m--Compiling lib$(LIB_NAME)... Configs as follow:\e[0;36;1m"
+	@echo "---- USER_CROSS=$(CROSS)"
+	@echo "---- INC_FILE=$(INC_FILE)"
+	@echo "---- LIBS_CFLAGS=$(LIBS_CFLAGS)"
+	@echo "---- MPI_CFLAGS=$(MPI_CFLAGS)"
+	@echo -e "\e[0m"
+	@mkdir -p $(REL_LIB)
+	@mkdir -p $(REL_INC)
+	@$(call maco_cp, $(INC_FILE), $(REL_INC))
+
+VPATH = $(MPI_SRC_DIR)
+
+$(OBJ_DIR)/%.o : %.c
+	@echo $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
+	@$(COMPILE)
+
+ifneq ($(CONFIG_OS_TYPE), liteos)
+lib$(LIB_NAME)_s: $(MPI_OBJS)
+	@$(CC) $(LIBS_LD_CFLAGS) -fPIC -shared -o $(LIB_S) $(MPI_OBJS) > /dev/null
+endif
+
+lib$(LIB_NAME)_a: $(MPI_OBJS)
+	@$(AR) -rsv $(notdir $(LIB_A)) $(MPI_OBJS) > /dev/null
+	@mv $(notdir $(LIB_A)) $(LIB_A)
+
+$(MPI_OBJS): prepare
+
+clean:
+	@rm -rf $(OBJ_DIR) $(LIB_A) $(LIB_S)
+	@$(call maco_rm, $(INC_FILE), $(REL_INC))

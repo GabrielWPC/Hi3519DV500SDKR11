@@ -1,0 +1,22 @@
+# Makefile.maco
+#
+# Only function can be defined here.
+
+# Use this file as the following sample, Must be referenced before use because define cannot be passed
+# include ../Makefile.maco
+
+define maco_rm
+    $(foreach file,$(1), $(shell rm -rf $(2)/$(notdir $(file))))
+endef
+
+define maco_cp
+    $(foreach file,$(1), $(shell mkdir -p $(2);cp -rf $(file) $(2)/$(notdir $(file))))
+endef
+
+define maco_cp_file
+    if [ ! -z "$(1)" ];then cp -rf $(1) "$(2)"; fi
+endef
+
+define maco_rmemptydir
+    if [ -e $(1) ];then rmdir --ignore-fail-on-non-empty "$(1)"; fi
+endef

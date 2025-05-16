@@ -1,0 +1,185 @@
+# Makefile.path.param
+#
+# Only global path should be defined here.
+# All the variables must be used as "export".
+# Otherwise, there will be some errors, when Makefile.path.param is nested.
+
+# Use this file as the following sample,
+# In particular, it has been included in Makefile.param by default.
+# ifeq ($(PATH_PARAM_FILE), )
+#     PATH_PARAM_FILE:=../Makefile.path.param
+#     include $(PATH_PARAM_FILE)
+# endif
+
+###############################################################################
+# Get the local SDK_ROOT path or RELEASE_ROOT path by PARAM_FILE.
+export PATH_PARAM_FILE
+BUILD_PARAM_DIR=$(shell cd $(shell dirname $(PATH_PARAM_FILE)); pwd)
+ifeq ($(BUILD_PARAM_FILE), )
+    BUILD_PARAM_FILE:=$(BUILD_PARAM_DIR)/Makefile.build.param
+    include $(BUILD_PARAM_FILE)
+endif
+
+export WORK_PATH?=/hiwork
+#*******************************************************************************
+#Set the sdk source code and include path
+export SDK_PATH         := $(shell cd $(BUILD_PARAM_DIR)/../..; pwd)
+export PLATFORM_PATH    := $(SDK_PATH)/platform
+export TEMP_PATH        := $(SDK_PATH)/temp
+export SOURCE_PATH      := $(SDK_PATH)/source
+export VENDOR_ROOT      := $(SDK_PATH)/vendor
+export OPEN_SOURCE_PATH := $(SDK_PATH)/open_source
+export MPP_PATH         := $(SOURCE_PATH)/mpp
+export DRV_ROOT         := $(SOURCE_PATH)/interdrv
+export OSAL_ROOT        := $(SOURCE_PATH)/osal
+export COMMON_ROOT      := $(SOURCE_PATH)/common
+export OUTPUT_PATH      := $(SOURCE_PATH)/output
+export MEM_ROOT         := $(COMMON_ROOT)/mem
+export BASE_ROOT        := $(COMMON_ROOT)/base
+export PROC_ROOT        := $(COMMON_ROOT)/proc
+export IRQ_ROOT         := $(COMMON_ROOT)/irq
+export SECUREC_ROOT     := $(PLATFORM_PATH)/securec
+export ARCH_ROOT        := $(BASE_ROOT)/arch/$(ARCH_DIR)
+export ARCH_HAL         := $(ARCH_ROOT)/hal
+#*******************************************************************************
+#Set the cbb source code path
+export CBB_ROOT             := $(MPP_PATH)/cbb
+export AUDIO_ROOT           := $(CBB_ROOT)/audio
+export VI_ROOT              := $(CBB_ROOT)/vi
+export VPSS_ROOT            := $(CBB_ROOT)/vpss
+export VO_ROOT              := $(CBB_ROOT)/vo
+export VO_VIDEO_ROOT        := $(CBB_ROOT)/vo/vo_video
+export VO_DEV_ROOT          := $(CBB_ROOT)/vo/vo_dev
+export VGS_ROOT             := $(CBB_ROOT)/vgs
+export GDC_ROOT             := $(CBB_ROOT)/gdc/gdc
+export FISHEYS_ADJUST_ROOT  := $(CBB_ROOT)/gdc/fisheye_adjust
+export SECURITY_SUBSYS_ROOT := $(CBB_ROOT)/security_subsys
+export GFBG_ROOT            := $(CBB_ROOT)/gfbg
+export PCIV_ROOT            := $(CBB_ROOT)/pciv
+export PHOTO_ROOT           := $(CBB_ROOT)/photo
+export SVP_ROOT             := $(CBB_ROOT)/svp
+export VCA_ROOT             := $(CBB_ROOT)/vca
+export VB_ROOT              := $(CBB_ROOT)/vb
+export VPP_ROOT             := $(CBB_ROOT)/vpp
+export SYS_ROOT             := $(CBB_ROOT)/sys
+export MOTIONFUSION_ROOT    := $(CBB_ROOT)/motionfusion
+export MCF_CFG_ROOT         := $(CBB_ROOT)/mcf/mcf_cfg
+export MCF_CALIBRATION_ROOT := $(CBB_ROOT)/mcf/mcf_calibration
+export AIISP_ROOT           := $(CBB_ROOT)/aiisp
+export SNAP_ROOT            := $(CBB_ROOT)/snap
+export VDA_ROOT             := $(CBB_ROOT)/vda
+export MCF_ROOT             := $(CBB_ROOT)/mcf/mcf
+export VENC_SRC_ROOT        := $(CBB_ROOT)/venc/src
+export VENC_OBJ_ROOT        := $(CBB_ROOT)/venc/pub
+export VENC_ROOT            := $(shell if [ -d "$(VENC_SRC_ROOT)" ]; then echo "$(VENC_SRC_ROOT)"; else echo "$(VENC_OBJ_ROOT)"; fi)
+export VDEC_ROOT            := $(CBB_ROOT)/vdec/vdec
+export VFMW_ROOT            := $(CBB_ROOT)/vdec/vfmw/vfmw_v6.1
+export JPEGD_ROOT           := $(CBB_ROOT)/vdec/jpegd
+export TDE_ROOT             := $(CBB_ROOT)/tde
+export REGION_ROOT          := $(CBB_ROOT)/region
+export DCC_ROOT             := $(CBB_ROOT)/dcc
+export UVC_ROOT             := $(CBB_ROOT)/uvc
+export AVS_ROOT             := $(CBB_ROOT)/avs
+export AVS_SOURCE_ROOT      := $(AVS_ROOT)/avs
+export AVS_CONVERT_ROOT     := $(AVS_ROOT)/avs_convert
+export AVS_LUT_ROOT         := $(AVS_ROOT)/avs_lut
+export POS_QUERY_ROOT       := $(AVS_ROOT)/pos_query
+export PM_ROOT              := $(CBB_ROOT)/pm
+
+export ISP_ROOT := $(CBB_ROOT)/isp
+
+ifeq ($(MPP_BUILD), y)
+    export EXTDRV       := vendor/extdrv/$(EXT_DRV)
+    export REL_DIR      := $(SOURCE_PATH)/output/$(CONFIG_OT_SUBARCH)/$(ARM_ARCH)/$(CPU_TYPE)_$(OSTYPE)
+    export SAMPLE_DIR   := $(SDK_PATH)/mpp/sample/$(CONFIG_OT_SUBARCH)
+    export OPTEE_PATH := $(SOURCE_PATH)/output/$(CONFIG_OT_SUBARCH)/$(ARM_ARCH)/$(CPU_TYPE)_optee
+else
+    #### MPP_BUILD=n ######
+    export EXTDRV           := vendor/extdrv
+    export REL_DIR          := $(SDK_PATH)/source/out
+    export SAMPLE_DIR       := $(SDK_PATH)/mpp/sample
+    export OPEN_SOURCE_PATH := $(SDK_PATH)/../../open_source
+    export OPTEE_PATH := $(SDK_PATH)/../a55_optee
+endif
+
+export REL_INC := $(REL_DIR)/include
+export EXP_INC := $(REL_INC)/exp_inc
+
+export COMMON_INCLUDE := -I$(OSAL_ROOT)/include
+COMMON_INCLUDE += -I$(SECUREC_ROOT)/include
+ifeq ($(MPP_BUILD), y)
+    COMMON_INCLUDE += -I$(MEM_ROOT)/include
+    COMMON_INCLUDE += -I$(PROC_ROOT)/include
+    COMMON_INCLUDE += -I$(IRQ_ROOT)/include
+    COMMON_INCLUDE += -I$(CBB_ROOT)/include
+    COMMON_INCLUDE += -I$(COMMON_ROOT)/include
+    COMMON_INCLUDE += -I$(ARCH_ROOT)/include
+    COMMON_INCLUDE += -I$(ARCH_ROOT)/include/$(OT_SUBARCH)
+    COMMON_INCLUDE += -I$(SYS_ROOT)/include
+    COMMON_INCLUDE += -I$(VB_ROOT)/include
+    COMMON_INCLUDE += -I$(VDEC_ROOT)/include
+    COMMON_INCLUDE += -I$(VO_VIDEO_ROOT)/include
+    COMMON_INCLUDE += -I$(VO_DEV_ROOT)/include
+    COMMON_INCLUDE += -I$(AUDIO_ROOT)/include
+else
+    COMMON_INCLUDE += -I$(REL_INC)
+    COMMON_INCLUDE += -I$(EXP_INC)
+endif
+
+# Define the param of audio
+export AUDIO_PATH?=$(MPP_PATH)/cbb/audio/component/lib/$(OT_ARCH)/$(CONFIG_OT_CROSS)/$(OSTYPE)
+
+ifeq ($(CONFIG_OT_AUDIO_STATIC_REGISTER_SUPPORT),y)
+ifeq ($(OSTYPE),linux)
+export AUDIO_LIBA ?= $(REL_LIB)/libvoice_engine.a\
+                     $(REL_LIB)/libupvqe.a\
+                     $(REL_LIB)/libdnvqe.a\
+                     $(REL_LIB)/libaac_comm.a\
+                     $(REL_LIB)/libaac_enc.a\
+                     $(REL_LIB)/libaac_dec.a\
+                     $(REL_LIB)/libaac_sbr_enc.a\
+                     $(REL_LIB)/libaac_sbr_dec.a
+
+export AUDIO_LIBS ?= $(REL_LIB)/libvoice_engine.so\
+                     $(REL_LIB)/libupvqe.so\
+                     $(REL_LIB)/libdnvqe.so\
+                     $(REL_LIB)/libaac_comm.so\
+                     $(REL_LIB)/libaac_enc.so\
+                     $(REL_LIB)/libaac_dec.so
+else
+export AUDIO_LIBA ?= $(REL_LIB)/libvoice_engine.a\
+                     $(REL_LIB)/libupvqe.a\
+                     $(REL_LIB)/libdnvqe.a\
+                     $(REL_LIB)/libaac_comm.a\
+                     $(REL_LIB)/libaac_enc.a\
+                     $(REL_LIB)/libaac_dec.a\
+                     $(REL_LIB)/libaac_sbr_enc.a\
+                     $(REL_LIB)/libaac_sbr_dec.a
+
+export AUDIO_LIBS ?= $(REL_LIB)/libvoice_engine.so
+endif
+else
+export AUDIO_LIBA ?= $(REL_LIB)/libvoice_engine.a\
+                     $(REL_LIB)/libupvqe.a\
+                     $(REL_LIB)/libdnvqe.a\
+                     $(REL_LIB)/libaac_enc.a\
+                     $(REL_LIB)/libaac_dec.a
+
+export AUDIO_LIBS ?= $(REL_LIB)/libvoice_engine.so\
+                     $(REL_LIB)/libupvqe.so\
+                     $(REL_LIB)/libdnvqe.so\
+                     $(REL_LIB)/libaac_enc.so\
+                     $(REL_LIB)/libaac_dec.so
+endif
+
+ifeq ($(CONFIG_DRIVER_SPACE_TYPE),user_space)
+export MAKE_FILE        := Makefile.$(OSTYPE).$(CONFIG_DRIVER_SPACE_TYPE)
+export SPACE_TYPE_PATH  := $(OSTYPE)_$(CONFIG_DRIVER_SPACE_TYPE)
+else
+export MAKE_FILE        := Makefile.$(OSTYPE)
+export SPACE_TYPE_PATH  := $(OSTYPE)
+endif
+
+export MAKE_DRV_FILE :=  $(SOURCE_PATH)/scripts/$(MAKE_FILE)
+export MAKE_MPI_FILE := $(SOURCE_PATH)/scripts/Makefile.mpi
+export MAKE_MACO_FILE := $(SOURCE_PATH)/scripts/Makefile.maco

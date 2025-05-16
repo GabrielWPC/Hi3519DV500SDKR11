@@ -1,0 +1,51 @@
+{
+    "security_mode": "Non-Secure",
+    "algorithm": "ECC+SHA256+AES",
+    "CFCT": {
+        "CFCT_data_enc_flag": "0x0"
+    },
+    "GSL": {
+        "GSL_key_area": {
+            "GSL_key_version_ext": "0x00000000",
+            "mask_GSL_key_version_ext": "0x00000000"
+        },
+        "GSL_Info_area": {
+            "GSL_code_version_ext": "0x00000000",
+            "mask_GSL_code_version_ext": "0x00000000",
+            "GSL_code_enc_flag": "0x3C7896E1",
+            "GSL_code_FlashReadClk": "0x0"
+        },
+        "GSL_code_area": {
+            "GSL_code_file": "./input/gsl.bin"
+        }
+    },
+    "REE_boot": {
+        "uboot_key_area": {
+            "uboot_key_version_ext": "0x00000000",
+            "mask_uboot_key_version_ext": "0x00000000"
+        },
+        "boot_params_Info": {
+            "boot_param_version_ext": "0x00000000",
+            "mask_boot_param_version_ext": "0x00000000",
+            "single_param_size": "0x3000",
+            "boot_param_total_num": "0x8",
+            "boot_param_file0": "/* path of param0 file used for building muty boot table image */",
+            "boot_param_file1": "/* path of param1 file used for building muty boot table image */",
+            "boot_param_file2": "/* path of param2 file used for building muty boot table image */",
+            "boot_param_file3": "/* path of param3 file used for building muty boot table image */",
+            "boot_param_file4": "/* path of param4 file used for building muty boot table image */",
+            "boot_param_file5": "/* path of param5 file used for building muty boot table image */",
+            "boot_param_file6": "/* path of param6 file used for building muty boot table image */",
+            "boot_param_file7": "./input/reg_info.bin"
+    },
+        "uboot_info_area": {
+            "uboot_version_ext": "0x00000000",
+            "mask_uboot_version_ext": "0x00000000",
+            "uboot_code_enc_flag": "0x3C7896E1",
+            "uboot_entry_point": "0x48700000"
+        },
+        "uboot_area": {
+            "uboot_code_file": "input/u-boot-original.bin"
+        }
+    }
+}

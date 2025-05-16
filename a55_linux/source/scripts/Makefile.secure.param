@@ -1,0 +1,27 @@
+# Makefile.cflags.param
+#
+# All secure param should be defined here.
+# All the variables must be used as "export" and "?=".
+
+# Use this file as the following sample,
+# In particular, it has been included in Makefile.cflags.param by default.
+# ifeq ($(BUILD_SECURE_FILE), )
+#     BUILD_SECURE_FILE:=$(BUILD_PARAM_DIR)/Makefile.secure.param
+#     include $(BUILD_SECURE_FILE)
+# endif
+
+export SECURE_PARAM_FILE
+
+# secure CFLAGS
+###############################################################################
+export SECURE_LIBS_CFLAGS ?= -fstack-protector-strong -fPIC
+export SECURE_EXEC_CFLAGS ?= -fPIE
+ifneq ($(CONFIG_LLVM), y)
+SECURE_EXEC_CFLAGS += -pie
+endif
+export SECURE_LD_CFLAGS   ?= -Wl,-z,relro -Wl,-z,noexecstack
+ifneq ($(OT_GDB), y)
+SECURE_EXEC_CFLAGS += -s
+SECURE_LD_CFLAGS += -Wl,-z,now,-s
+endif
+###############################################################################

@@ -1,0 +1,18 @@
+
+ifeq ($(PARAM_FILE), )
+    PARAM_FILE:=../../../../../Makefile.param
+    include $(PARAM_FILE)
+endif
+
+ifeq ($(CBB_PARAM_FILE), )
+    CBB_PARAM_FILE:=../../../Makefile.param
+    include $(CBB_PARAM_FILE)
+endif
+#*******************************************************************************
+#Set the source code and include path
+
+#*******************************************************************************
+# The common head include file
+
+#
+export EXTDRV_PARAM_FILE

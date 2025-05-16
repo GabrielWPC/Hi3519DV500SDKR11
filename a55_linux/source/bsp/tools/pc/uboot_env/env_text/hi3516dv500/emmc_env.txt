@@ -1,0 +1,16 @@
+arch=arm
+baudrate=115200
+board=hi3516dv500
+board_name=hi3516dv500
+bootdelay=2
+cpu=armv8
+ethact=gmac0
+loadaddr=0x40080000
+soc=hi3516dv500
+stderr=serial
+stdin=serial
+stdout=serial
+vendor=vendor
+verify=n
+bootargs=mem=132928K console=ttyAMA0,115200 clk_ignore_unused root=/dev/mmcblk0p5 rootfstype=ext4 rw rootwait blkdevparts=mmcblk0:512K(boot),512K(env),512K(bl31),13M(kernel),96M(rootfs)
+bootcmd=mmc read 0 0x40010000 0x800 0x400; ipcboot bl31 0x40010000; mmc read 0 0x44000000 0xc00 0x6800; ipcboot uimgfdt 0x44000000

@@ -1,0 +1,40 @@
+ifeq ($(PARAM_FILE), )
+    PARAM_FILE:=../../../../Makefile.param
+    include $(PARAM_FILE)
+endif
+
+INIT_ROOT = $(REL_DIR)/init
+
+EXTRA_CFLAGS += $(MPP_CFLAGS)
+EXTRA_CFLAGS += $(DRV_CFLAGS)
+EXTRA_CFLAGS += -I$(INIT_ROOT)/include
+EXTRA_CFLAGS += -I$(OSAL_ROOT)/include
+EXTRA_CFLAGS += -I$(COMMON_ROOT)/mem/include
+
+TARGET ?=
+
+KBUILD_EXTRA_SYMBOLS := $(TEMP_PATH)/source/osal/src/linux/kernel/Module.symvers
+KBUILD_EXTRA_SYMBOLS += $(TEMP_PATH)/source/common/mem/mmz/linux/Module.symvers
+ifneq ($(TARGET),base)
+    KBUILD_EXTRA_SYMBOLS += $(TEMP_PATH)/source/interdrv/sysconfig/Module.symvers
+    KBUILD_EXTRA_SYMBOLS += $(PWD)/../base/Module.symvers
+endif
+
+$(KO_PREFIX)_$(TARGET)-objs := ../../mod_$(TARGET).o ../../../init/src/$(TARGET)_init.o
+obj-m += $(KO_PREFIX)_$(TARGET).o
+
+default:
+	@echo -e "\e[0;32;1m--Compiling '$(TARGET)'... Configs as follow:\e[0;36;1m"
+	@echo ---- CROSS=$(CROSS) REL_INC=$(REL_INC)
+	@echo ---- OT_SUBARCH=$(OT_SUBARCH), CVER=$(CVER), DBG=$(OT_DBG), OT_FPGA=$(OT_FPGA)
+	@echo ---- CPU_TYPE=$(CPU_TYPE) REL_KO=$(REL_KO)
+	@echo ---- EXTRA_CFLAGS=$(EXTRA_CFLAGS)
+	@echo ---- SDK_PATH=$(SDK_PATH) , PARAM_FILE=$(PARAM_FILE)
+	@echo ---- KERNEL_ROOT=$(KERNEL_ROOT)
+	@echo ---- ARCH_ROOT=$(ARCH_ROOT), ARCH_HAL=$(ARCH_HAL)
+	@echo ---- obj-m=$(obj-m)
+	@@echo -e "\e[0m"
+	@$(MAKE) -C $(KERNEL_ROOT) M=$(PWD) $(CLANG_CROSS) V=10 modules -j 24
+	@$(STRIP) --strip-unneeded ./$(KO_PREFIX)_$(TARGET).ko
+	@mkdir -p $(REL_KO) && cp ./$(KO_PREFIX)_$(TARGET).ko $(REL_KO)
+

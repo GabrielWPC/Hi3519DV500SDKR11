@@ -1,0 +1,171 @@
+# Makefile.param
+#
+# Only global include path should be defined here.
+# All the variables must be used as "export" and "?=".
+# Otherwise, there will be some errors, when Makefile.param is nested.
+
+# Use this file as the following sample,
+# ifeq ($(CBB_PARAM_FILE), )
+#     CBB_PARAM_FILE:=../Makefile.param
+#     include $(CBB_PARAM_FILE)
+# endif
+export CBB_PARAM_FILE
+PARAM_DIR=$(shell cd $(shell dirname $(CBB_PARAM_FILE))/../..; pwd)
+ifeq ($(PARAM_FILE), )
+    PARAM_FILE:=$(PARAM_DIR)/Makefile.param
+    include $(PARAM_FILE)
+endif
+
+#*******************************************************************************
+# Include bvt all modules subdir INC.
+# The baseon head include file
+export COMM_INC := -I$(CBB_ROOT)/include
+COMM_INC += -I$(CBB_ROOT)/init/$(OT_ARCH)/$(SPACE_TYPE_PATH)/include
+
+# chip common header
+COMM_INC += -I$(BASE_ROOT)/arch/$(OT_ARCH)/include
+COMM_INC += -I$(BASE_ROOT)/arch/$(OT_ARCH)/include/$(OT_SUBARCH)
+COMM_INC += -I$(IRQ_ROOT)/include
+COMM_INC += -I$(MEM_ROOT)/include
+
+# osal include
+COMM_INC += -I$(OSAL_ROOT)/include
+
+# securec include
+COMM_INC += -I$(SECUREC_ROOT)/include
+
+# cbb include
+COMM_INC += -I$(VI_ROOT)/include
+COMM_INC += -I$(VI_ROOT)/rgbw/include
+COMM_INC += -I$(VO_ROOT)/common/mkp/include
+COMM_INC += -I$(VO_VIDEO_ROOT)/include
+COMM_INC += -I$(VO_DEV_ROOT)/include
+COMM_INC += -I$(VGS_ROOT)/include
+COMM_INC += -I$(VPSS_ROOT)/include
+COMM_INC += -I$(VENC_ROOT)/include
+COMM_INC += -I$(VDEC_ROOT)/include
+COMM_INC += -I$(REGION_ROOT)/include/
+COMM_INC += -I$(MCF_ROOT)/include
+COMM_INC += -I$(DCC_ROOT)/include
+COMM_INC += -I$(CBB_ROOT)/snap/include
+COMM_INC += -I$(CBB_ROOT)/dis/gmedis/include
+COMM_INC += -I$(CBB_ROOT)/aiisp/include
+
+COMM_INC += -I$(SYS_ROOT)/include
+COMM_INC += -I$(SYS_ROOT)/include/inner
+
+COMM_INC += -I$(VB_ROOT)/include
+COMM_INC += -I$(VB_ROOT)/include/inner
+
+COMM_INC += -I$(VCA_ROOT)/include/inner
+
+COMM_INC += -I$(AVS_SOURCE_ROOT)/include
+COMM_INC += -I$(AVS_SOURCE_ROOT)/include/inner
+
+COMM_INC += -I$(GDC_ROOT)/include
+COMM_INC += -I$(GDC_ROOT)/include/inner
+
+COMM_INC += -I$(VPP_ROOT)/include
+COMM_INC += -I$(VPP_ROOT)/include/inner
+
+COMM_INC += -I$(AUDIO_ROOT)/include
+COMM_INC += -I$(AUDIO_ROOT)/include/inner
+
+COMM_INC += -I$(ISP_ROOT)/include
+COMM_INC += -I$(ISP_ROOT)/include/inner
+COMM_INC += -I$(ISP_ROOT)/include/arch/$(OT_ARCH)/include
+COMM_INC += -I$(ISP_ROOT)/kernel/arch/$(OT_ARCH)/include
+COMM_INC += -I$(ISP_ROOT)/kernel/mkp/include
+COMM_INC += -I$(ISP_ROOT)/user/firmware/arch/$(OT_ARCH)/include
+COMM_INC += -I$(ISP_ROOT)/user/firmware/include
+COMM_INC += -I$(UVC_ROOT)/include
+COMM_INC += -I$(UVC_ROOT)/include/inner
+
+# cbb ext_inc
+COMM_INC += -I$(BASE_ROOT)/ext_inc
+COMM_INC += -I$(SYS_ROOT)/ext_inc
+COMM_INC += -I$(VB_ROOT)/ext_inc
+COMM_INC += -I$(VCA_ROOT)/ext_inc
+COMM_INC += -I$(VCA_ROOT)/arch/include
+COMM_INC += -I$(VCA_ROOT)/arch/$(OT_ARCH)/include
+COMM_INC += -I$(VI_ROOT)/ext_inc
+COMM_INC += -I$(MCF_ROOT)/ext_inc
+COMM_INC += -I$(ISP_ROOT)/ext_inc
+COMM_INC += -I$(VO_VIDEO_ROOT)/ext_inc
+COMM_INC += -I$(REGION_ROOT)/ext_inc
+COMM_INC += -I$(VGS_ROOT)/ext_inc
+COMM_INC += -I$(AVS_SOURCE_ROOT)/ext_inc
+COMM_INC += -I$(GDC_ROOT)/ext_inc
+COMM_INC += -I$(GDC_ROOT)/arch/$(OT_ARCH)/algorithm/include
+COMM_INC += -I$(VPP_ROOT)/ext_inc
+COMM_INC += -I$(VPSS_ROOT)/ext_inc
+COMM_INC += -I$(CBB_ROOT)/dis/gmedis/ext_inc
+COMM_INC += -I$(CBB_ROOT)/dis/gyrodis/ext_inc
+COMM_INC += -I$(VDEC_ROOT)/ext_inc
+COMM_INC += -I$(JPEGD_ROOT)/ext_inc
+COMM_INC += -I$(VENC_ROOT)/ext_inc
+COMM_INC += -I$(VENC_ROOT)/comm_inc
+COMM_INC += -I$(AUDIO_ROOT)/ext_inc
+
+COMM_INC += -I$(SYS_ROOT)/mkp/include
+COMM_INC += -I$(CBB_ROOT)/chnl/mkp/include/
+COMM_INC += -I$(VGS_ROOT)/mkp/include
+COMM_INC += -I$(REGION_ROOT)/mkp/include
+COMM_INC += -I$(CBB_ROOT)/dis/gmedis/mkp/include
+COMM_INC += -I$(CBB_ROOT)/dis/gyrodis/mkp/include
+COMM_INC += -I$(VDEC_ROOT)/mkp/include
+COMM_INC += -I$(JPEGD_ROOT)/mkp/include
+COMM_INC += -I$(MCF_ROOT)/mkp/include
+
+COMM_INC += -I$(VDA_ROOT)/ext_inc
+COMM_INC += -I$(VDA_ROOT)/include
+COMM_INC += -I$(VDA_ROOT)/mkp/include
+
+COMM_INC += -I$(DCC_ROOT)/ext_inc
+COMM_INC += -I$(CBB_ROOT)/dcc/debug/
+
+COMM_INC += -I$(CBB_ROOT)/hdmi/src/include
+
+COMM_INC += -I$(UVC_ROOT)/ext_inc
+COMM_INC += -I$(UVC_ROOT)/mkp/include
+
+#*******************************************************************************
+#used to linux kernel kbuild EXTRA_CFLAGS or liteos build flags.
+MKP_CFLAGS += -Wall -D$(OT_ARCH) -D$(OT_FPGA)
+
+ifeq ($(FPGA),y)
+MKP_CFLAGS += -D$(UMAP)
+endif
+
+#NOTES! pls active the macro USE_SYSCTL and _USE_LLI_,when you run in FPGA board
+MKP_CFLAGS += -D_USE_LLI_
+
+#*******************************************************************************
+MKP_CFLAGS += $(MPP_CFLAGS)
+MPI_CFLAGS += $(MPP_CFLAGS)
+ifeq ($(MPP_BUILD), y)
+MPI_CFLAGS += $(COMM_INC)
+MKP_CFLAGS += $(COMM_INC)
+endif
+
+# mpi-mkp cbb include
+MPI_CFLAGS += -I$(BASE_ROOT)/mkp/include
+MPI_CFLAGS += -I$(SYS_ROOT)/mkp/include
+MPI_CFLAGS += -I$(VB_ROOT)/mkp/include
+MPI_CFLAGS += -I$(VI_ROOT)/mkp/include
+MPI_CFLAGS += -I$(MCF_ROOT)/mkp/include
+MPI_CFLAGS += -I$(VO_VIDEO_ROOT)/mkp/include
+MPI_CFLAGS += -I$(VO_DEV_ROOT)/mkp/include
+MPI_CFLAGS += -I$(VPSS_ROOT)/mkp/include
+MPI_CFLAGS += -I$(AVS_SOURCE_ROOT)/mkp/include
+MPI_CFLAGS += -I$(GDC_ROOT)/mkp/include
+MPI_CFLAGS += -I$(VDEC_ROOT)/mkp/include
+MPI_CFLAGS += -I$(UVC_ROOT)/mkp/include
+
+#*******************************************************************************
+MPI_CFLAGS += -I$(GDC_ROOT)/mkp/include
+MPI_CFLAGS += -I$(VCA_ROOT)/mkp/include
+#*******************************************************************************
+#
+export MKP_CFLAGS
+export MPI_CFLAGS

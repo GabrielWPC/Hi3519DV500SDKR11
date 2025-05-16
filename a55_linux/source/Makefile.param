@@ -1,0 +1,35 @@
+# Makefile.param
+#
+# Only global variable should be defined here.
+# All the variables must be used as "export" and "?=".
+# Otherwise, there will be some errors, when Makefile.param is nested.
+
+# Use this file as the following sample
+# ifeq ($(PARAM_FILE), )
+#     PARAM_FILE:=../Makefile.param
+#     include $(PARAM_FILE)
+# endif
+
+#
+
+export PARAM_FILE
+PARAM_DIR=$(shell cd $(shell dirname $(PARAM_FILE)); pwd)
+
+include $(PARAM_DIR)/cfg.mak
+
+ifeq ($(BUILD_PARAM_FILE), )
+    BUILD_PARAM_FILE:=$(PARAM_DIR)/scripts/Makefile.build.param
+    include $(BUILD_PARAM_FILE)
+endif
+ifeq ($(PATH_PARAM_FILE), )
+    PATH_PARAM_FILE:=$(PARAM_DIR)/scripts/Makefile.path.param
+    include $(PATH_PARAM_FILE)
+endif
+ifeq ($(CFLAGS_PARAM_FILE), )
+    CFLAGS_PARAM_FILE:=$(PARAM_DIR)/scripts/Makefile.cflags.param
+    include $(CFLAGS_PARAM_FILE)
+endif
+
+# include the config file of platform
+include $(PARAM_DIR)/scripts/Makefile.$(OSTYPE).param
+# End!!

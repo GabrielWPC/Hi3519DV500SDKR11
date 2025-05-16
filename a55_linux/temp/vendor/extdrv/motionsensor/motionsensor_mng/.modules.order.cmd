@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_mng/modules.order := {   echo /mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_mng/motionsensor_mng.ko; :; } | awk '!x[$$0]++' - > /mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_mng/modules.order

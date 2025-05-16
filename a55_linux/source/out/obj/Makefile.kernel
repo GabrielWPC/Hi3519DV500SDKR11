@@ -1,0 +1,90 @@
+board_dir = drivers/vendor/board
+include $(board_dir)/Makefile.config
+
+define wildcard_all_c_file
+    $(shell find $(board_dir)/$(1) -type f -name "*.c" | grep -v mpi | grep -v uapi | \
+        grep -v adapt | sed "s@$(board_dir)/@@g" | sed "s@\.c@\.o@g")
+endef
+
+INCS = $(shell find $(board_dir) -name "*.h" | xargs dirname | sort -u)
+EXTRA_CFLAGS := $(addprefix "-I", $(INCS))
+EXTRA_CFLAGS += -Wno-date-time
+
+# for gfbg
+EXTRA_CFLAGS += -DCONFIG_GFBG_G0_FHD_SUPPORT
+EXTRA_CFLAGS += -DCONFIG_GFBG_LOW_DELAY_SUPPORT
+EXTRA_CFLAGS += -DCONFIG_GFBG_RESOLUTION_SUPPORT_SQUARE
+EXTRA_CFLAGS += -DCONFIG_TDE_CLUT_RECT_SUPPORT_G0
+EXTRA_CFLAGS += -DCONFIG_TDE_GFBG_COMPRESS_V2
+EXTRA_CFLAGS += -DCONFIG_TDE_CLUT_RECT_V2
+EXTRA_CFLAGS += -DCONFIG_COMPRESS_ECONOMIZE_MEMERY
+
+# for security_subsys
+EXTRA_CFLAGS += -DCONFIG_CRYPTO_CHIP_HI3519DV500
+EXTRA_CFLAGS += -DCRYPTO_CTR_NON_ALIGN_SUPPORT
+EXTRA_CFLAGS += -DCRYPTO_SYMC_ADDR_NOT_ALIGN_SUPPORT
+
+# for gyro
+EXTRA_CFLAGS += -DIMU_$(shell echo $(SENSOR_TYPE) | tr a-z A-Z)
+
+obj-$(CONFIG_BOARD_SYSCONFIG)       += $(call wildcard_all_c_file,interdrv/sysconfig)
+obj-$(CONFIG_BOARD_OSAL)            += $(call wildcard_all_c_file,osal/src/linux/kernel)
+obj-$(CONFIG_BOARD_MMZ)             += $(call wildcard_all_c_file,common/mem/mmz/linux)
+obj-$(CONFIG_BOARD_BASE)            += out/obj/mod_base.o out/init/src/base_init.o
+obj-$(CONFIG_BOARD_VB)              += out/obj/mod_vb.o out/init/src/vb_init.o
+obj-$(CONFIG_BOARD_VCA)             += out/obj/mod_vca.o out/init/src/vca_init.o
+obj-$(CONFIG_BOARD_SYS)             += out/obj/mod_sys.o out/init/src/sys_init.o
+obj-$(CONFIG_BOARD_TDE)             += out/obj/mod_tde.o out/init/src/tde_init.o
+obj-$(CONFIG_BOARD_RGN)             += out/obj/mod_rgn.o out/init/src/rgn_init.o
+obj-$(CONFIG_BOARD_GDC)             += out/obj/mod_gdc.o out/init/src/gdc_init.o
+obj-$(CONFIG_BOARD_VPP)             += out/obj/mod_vpp.o out/init/src/vpp_init.o
+obj-$(CONFIG_BOARD_VGS)             += out/obj/mod_vgs.o out/init/src/vgs_init.o
+obj-$(CONFIG_BOARD_DIS)             += out/obj/mod_dis.o out/init/src/dis_init.o
+obj-$(CONFIG_BOARD_VI)              += out/obj/mod_vi.o out/init/src/vi_init.o
+obj-$(CONFIG_BOARD_ISP)             += out/obj/mod_isp.o out/init/src/isp_init.o
+obj-$(CONFIG_BOARD_VPSS)            += out/obj/mod_vpss.o out/init/src/vpss_init.o
+obj-$(CONFIG_BOARD_MCF)             += out/obj/mod_mcf.o out/init/src/mcf_init.o
+obj-$(CONFIG_BOARD_GFBG)            += $(call wildcard_all_c_file,mpp/cbb/gfbg)
+# obj-$(CONFIG_BOARD_VO_DEV)          += out/obj/mod_vo_dev.o out/init/src/vo_dev_init.o
+# obj-$(CONFIG_BOARD_VO)              += out/obj/mod_vo.o out/init/src/vo_init.o
+obj-$(CONFIG_BOARD_CHNL)            += out/obj/mod_chnl.o out/init/src/chnl_init.o
+obj-$(CONFIG_BOARD_VFMW)            += out/obj/mod_vfmw.o out/init/src/vfmw_init.o
+obj-$(CONFIG_BOARD_RC)              += out/obj/mod_rc.o out/init/src/rc_init.o
+obj-$(CONFIG_BOARD_VENC)            += out/obj/mod_venc.o out/init/src/venc_init.o
+obj-$(CONFIG_BOARD_VENC_SVR)        += out/obj/mod_venc_svr.o out/init/src/venc_svr_init.o
+obj-$(CONFIG_BOARD_H264E)           += out/obj/mod_h264e.o out/init/src/h264e_init.o
+obj-$(CONFIG_BOARD_H265E)           += out/obj/mod_h265e.o out/init/src/h265e_init.o
+obj-$(CONFIG_BOARD_JPEGE)           += out/obj/mod_jpege.o out/init/src/jpege_init.o
+obj-$(CONFIG_BOARD_JPEGD)           += out/obj/mod_jpegd.o out/init/src/jpegd_init.o
+obj-$(CONFIG_BOARD_VDEC)            += out/obj/mod_vdec.o out/init/src/vdec_init.o
+obj-$(CONFIG_BOARD_LT8618SX)        += $(call wildcard_all_c_file,extdrv/lt8618sx)
+obj-$(CONFIG_BOARD_IVE)             += out/obj/mod_ive.o out/init/src/ive_init.o
+obj-$(CONFIG_BOARD_DPU_RECT)        += out/obj/mod_dpu_rect.o out/init/src/dpu_rect_init.o
+obj-$(CONFIG_BOARD_DPU_MATCH)       += out/obj/mod_dpu_match.o out/init/src/dpu_match_init.o
+obj-$(CONFIG_BOARD_SVP_NPU)         += out/obj/mod_svp_npu.o out/init/src/svp_npu_init.o
+obj-$(CONFIG_BOARD_ISP_PWM)         += $(call wildcard_all_c_file,mpp/cbb/isp/ext_drv/pwm) mpp/cbb/init/linux/src/pwm_init.o
+obj-$(CONFIG_BOARD_ISP_PIRIS)       += $(call wildcard_all_c_file,mpp/cbb/isp/ext_drv/piris) mpp/cbb/init/linux/src/piris_init.o
+obj-$(CONFIG_BOARD_ISP_SENSOR_I2C)  += $(call wildcard_all_c_file,mpp/cbb/isp/ext_drv/sensor_i2c) mpp/cbb/init/linux/src/sensor_i2c_init.o
+obj-$(CONFIG_BOARD_ISP_SENSOR_SPI)  += $(call wildcard_all_c_file,mpp/cbb/isp/ext_drv/sensor_spi) mpp/cbb/init/linux/src/sensor_spi_init.o
+obj-$(CONFIG_BOARD_MIPI_TX)         += $(call wildcard_all_c_file,interdrv/mipi_tx) interdrv/init/linux/mipi_tx_init.o
+obj-$(CONFIG_BOARD_AIO)             += out/obj/mod_aio.o out/init/src/aio_init.o
+obj-$(CONFIG_BOARD_AI)              += out/obj/mod_ai.o out/init/src/ai_init.o
+obj-$(CONFIG_BOARD_AO)              += out/obj/mod_ao.o out/init/src/ao_init.o
+obj-$(CONFIG_BOARD_AENC)            += out/obj/mod_aenc.o out/init/src/aenc_init.o
+obj-$(CONFIG_BOARD_ADEC)            += out/obj/mod_adec.o out/init/src/adec_init.o
+obj-$(CONFIG_BOARD_ACODEC)          += out/obj/mod_acodec.o out/init/src/acodec_init.o
+obj-$(CONFIG_BOARD_MIPI_RX)         += $(call wildcard_all_c_file,interdrv/mipi_rx) interdrv/init/linux/mipi_rx_init.o
+obj-$(CONFIG_BOARD_OT_USER)         += $(call wildcard_all_c_file,interdrv/ot_user)
+obj-$(CONFIG_BOARD_AIISP)           += out/obj/mod_aiisp.o out/init/src/aiisp_init.o
+obj-$(CONFIG_BOARD_UVC)             += out/obj/mod_uvc.o out/init/src/uvc_init.o
+obj-$(CONFIG_BOARD_PM)              += out/obj/mod_pm.o out/init/src/pm_init.o
+obj-$(CONFIG_BOARD_SECURITY_SUBSYS) += $(call wildcard_all_c_file,mpp/cbb/security_subsys)
+obj-$(CONFIG_BOARD_SMMZ_AGENT)      += $(call wildcard_all_c_file,common/smmz_agent/kernel)
+obj-$(CONFIG_BOARD_GYRO)            += $(call wildcard_all_c_file,extdrv/motionsensor/motionsensor_spi)
+obj-$(CONFIG_BOARD_GYRO)            += out/obj/mod_gyrodis.o out/init/src/gyrodis_init.o
+obj-$(CONFIG_BOARD_GYRO)            += out/obj/mod_motionfusion.o out/init/src/motionfusion_init.o
+obj-$(CONFIG_BOARD_GYRO)            += $(call wildcard_all_c_file,extdrv/motionsensor/motionsensor_mng)
+obj-$(CONFIG_BOARD_GYRO)            += $(call wildcard_all_c_file,extdrv/motionsensor/motionsensor_chip/transfer_type/$(TRANSFER_TYPE))
+obj-$(CONFIG_BOARD_GYRO)            += $(call wildcard_all_c_file,extdrv/motionsensor/motionsensor_chip/sensor_dev/$(SENSOR_TYPE))
+obj-$(CONFIG_BOARD_GYRO)            += $(call wildcard_all_c_file,extdrv/motionsensor/motionsensor_chip/proc)
+obj-$(CONFIG_BOARD_GYRO)            += $(call wildcard_all_c_file,extdrv/motionsensor/motionsensor_chip/main)

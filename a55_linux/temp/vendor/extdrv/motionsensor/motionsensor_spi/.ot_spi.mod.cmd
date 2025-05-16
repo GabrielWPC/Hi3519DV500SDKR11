@@ -1,0 +1,1 @@
+cmd_/mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_spi/ot_spi.mod := { echo  /mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_spi/motionsensor_spi.o;  echo; } > /mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_spi/ot_spi.mod

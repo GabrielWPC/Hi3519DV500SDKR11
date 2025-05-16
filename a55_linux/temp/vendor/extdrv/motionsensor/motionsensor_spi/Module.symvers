@@ -1,0 +1,3 @@
+0x00000000	ot_motionsensor_ssp_write_alt	/mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_spi/ot_spi	EXPORT_SYMBOL_GPL	
+0x00000000	ot_motionsensor_ssp_read_alt	/mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_spi/ot_spi	EXPORT_SYMBOL_GPL	
+0x00000000	ot_motionsensor_ssp_get_num	/mnt/hgfs/project/tuopu/3519dv500/smp/a55_linux/temp/vendor/extdrv/motionsensor/motionsensor_spi/ot_spi	EXPORT_SYMBOL_GPL	

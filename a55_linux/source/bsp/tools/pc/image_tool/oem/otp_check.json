@@ -1,0 +1,16 @@
+{
+	"soc_tee_enable": "0x42",
+	"ree_verify_enable": "0x42",
+	"ree_hash_flash_root_key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+	"msid": "0",
+	"params_ver": "0",
+	"ree_boot_ver": "0",
+	"tee_verify_enable": "0x42",
+	"tee_hash_flash_root_key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+	"tee_boot_ver": "0",
+	"tee_os_ver": "0",
+	"scs_alg_sel": "0",
+	"ree_dec_enable": "0",
+	"tee_dec_enable": "0",
+	"obfu_mrk1": "0x00000000000000000000000000000000"
+}

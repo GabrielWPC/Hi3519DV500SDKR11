@@ -1,0 +1,112 @@
+# Makefile.cflags.param
+#
+# All cflags param should be defined here.
+
+# Use this file as the following sample,
+# In particular, it has been included in Makefile.param by default.
+# ifeq ($(CFLAGS_PARAM_FILE), )
+#     CFLAGS_PARAM_FILE:=../Makefile.cflags.param
+#     include $(CFLAGS_PARAM_FILE)
+# endif
+export CFLAGS_PARAM_FILE
+BUILD_PARAM_DIR=$(shell cd $(shell dirname $(CFLAGS_PARAM_FILE)); pwd)
+ifeq ($(BUILD_PARAM_FILE), )
+    BUILD_PARAM_FILE:=$(BUILD_PARAM_DIR)/Makefile.build.param
+    include $(BUILD_PARAM_FILE)
+endif
+
+ifeq ($(BUILD_SECURE_FILE), )
+    BUILD_SECURE_FILE:=$(BUILD_PARAM_DIR)/Makefile.secure.param
+    include $(BUILD_SECURE_FILE)
+endif
+
+
+###############################################################################
+# Common CFLAGS, build flags for all MPP libs and drivers
+# -Wno-unused-parameter -Wno-missing-field-initializers: Too many false positives with these compilation options
+MPP_EXTRA_CFLAGS = -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+
+export MPP_CFLAGS := -Wall $(MPP_EXTRA_CFLAGS) -fsigned-char $(COMMON_INCLUDE)
+
+# Driver CFLAGS, build flags for linux kernel kbuild EXTRA_CFLAGS or liteos drivers
+# -Wno-sign-compare: Kernel include has many magic usage
+export DRV_CFLAGS := -Wall $(MPP_EXTRA_CFLAGS) -Wno-sign-compare -fsigned-char $(COMMON_INCLUDE)
+
+# Libs CFLAGS, build flags for linux or liteos libs
+export LIBS_CFLAGS := -Wall $(MPP_EXTRA_CFLAGS) -fsigned-char $(COMMON_INCLUDE) $(SECURE_LIBS_CFLAGS)
+
+# Executable program CFLAGS, build flags for linux or liteos libs
+export LIBS_EXEC_CFLAGS := $(SECURE_EXEC_CFLAGS)
+
+# Libs LDFLAGS, link flags for linux or liteos libs
+export LIBS_LD_CFLAGS := -fno-common $(SECURE_LD_CFLAGS)
+###############################################################################
+
+# common CFLAGS
+###############################################################################
+MPP_CFLAGS     += -DVER_X=$(VER_X) -DVER_Y=$(VER_Y) -DVER_Z=$(VER_Z) -DVER_P=$(VER_P) -DVER_B=$(VER_B)
+MPP_CFLAGS     += -D$(CONFIG_USER_BIT) -D$(CONFIG_KERNEL_BIT) -D$(OT_RLS_MODE)
+LIBS_CFLAGS    += -ffunction-sections -fdata-sections -O2
+ifneq ($(CONFIG_LLVM), y)
+LIBS_CFLAGS    += -fno-aggressive-loop-optimizations
+LIBS_LD_CFLAGS += -fno-aggressive-loop-optimizations
+endif
+###############################################################################
+
+# debug CFLAGS
+###############################################################################
+ifeq ($(OT_GDB), y)
+    MPP_CFLAGS += -g
+    DRV_CFLAGS += -g
+    LIBS_CFLAGS += -g -fPIC -fno-omit-frame-pointer -O0
+ifeq ($(CONFIG_OT_ASAN_SUPPORT), y)
+    LIBS_CFLAGS += -fsanitize-recover=address,all -fsanitize=address,undefined
+endif
+    LIBS_CFLAGS += -Wno-sign-compare
+endif
+###############################################################################
+
+# fuzz test CFLAGS, need run with OT_GDB
+###############################################################################
+ifeq ($(OT_GDB), y)
+ifeq ($(SECODEFUZZ_TEST_SUPPORT), y)
+    LIBS_CFLAGS += -fsanitize-coverage=trace-pc,trace-cmp
+endif
+endif
+###############################################################################
+
+# MPP_BUILD CFLAGS
+###############################################################################
+ifeq ($(MPP_BUILD), y)
+    MPP_CFLAGS      += -Wunused-but-set-variable -pipe -Werror -fno-common
+    DRV_CFLAGS      += -Wunused-but-set-variable -Wfloat-equal -Wformat=2 -Werror
+ifeq ($(CONFIG_LLVM), y)
+    DRV_CFLAGS      += -Wframe-larger-than=1024
+else
+    MPP_CFLAGS      += -Wtrampolines
+    DRV_CFLAGS      += --warn-stack-usage=880
+endif
+    LIBS_CFLAGS     += -Wunused-but-set-variable -Wformat=2 -Werror
+    LIBS_LD_CFLAGS  += -Wl,-Bsymbolic
+endif
+###############################################################################
+
+# CPU CFLAGS for libs
+###############################################################################
+ifeq ($(OT_ARCH),$(filter $(OT_ARCH), hi3519dv500))
+    LIBS_CFLAGS    += -mcpu=cortex-a55
+    LIBS_LD_CFLAGS += -mcpu=cortex-a55
+endif
+###############################################################################
+
+# BITS CFLAGS for mmap64
+###############################################################################
+ifeq ($(CONFIG_KERNEL_BIT),KERNEL_BIT_64)
+    LIBS_CFLAGS     += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+    LIBS_LD_CFLAGS  += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+endif
+###############################################################################
+
+ifeq ($(CONFIG_OT_VDEC_SUPPORT), y)
+    MPP_CFLAGS += -D$(CONFIG_VDEC_IP)
+endif

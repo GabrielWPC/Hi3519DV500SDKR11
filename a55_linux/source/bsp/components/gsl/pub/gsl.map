@@ -1,0 +1,907 @@
+Archive member included to satisfy reference by file (symbol)
+
+drivers/libdrv.a(otp.o)       boot/checkup.o (is_tee_verify_enable)
+drivers/libdrv.a(svb.o)       boot/main.o (start_svb)
+drivers/libdrv.a(init_regs.o)
+                              boot/main.o (init_registers)
+drivers/libdrv.a(ddrtrn_api_retrain.o)
+                              boot/main.o (bsp_ddrtrn_retrain_enable)
+drivers/libdrv.a(ddrtrn_api_training_item.o)
+                              boot/main.o (bsp_ddrtrn_training_item)
+drivers/libdrv.a(ddrtrn_api_pm.o)
+                              boot/main.o (bsp_ddrtrn_dmc_auto_power_down_cfg)
+drivers/libdrv.a(uart.o)      boot/main.o (send_board_type_to_uart)
+drivers/libdrv.a(serial_pl011.o)
+                              boot/main.o (serial_putc)
+drivers/libdrv.a(tzasc.o)     boot/main.o (tzasc_sec_config_read_back)
+drivers/libdrv.a(share_drivers.o)
+                              boot/main.o (uapi_drv_cipher_init)
+drivers/libdrv.a(ipc.o)       boot/main.o (ipc_send_msg)
+drivers/libdrv.a(gpll.o)      boot/main.o (get_ddr_scrub_and_gpll_switch)
+drivers/libdrv.a(ddrtrn_common_ctl.o)
+                              drivers/libdrv.a(ddrtrn_api_training_item.o) (ddrtrn_sw_training_if)
+drivers/libdrv.a(ddrtrn_hal_context.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_hal_get_phy)
+drivers/libdrv.a(ddrtrn_training_custom.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_hal_boot_cmd_save)
+drivers/libdrv.a(ddrtrn_get_ddr_size.o)
+                              drivers/libdrv.a(ddrtrn_api_training_item.o) (ddrtrn_capat_adapt_func)
+drivers/libdrv.a(ddrtrn_capacity_adapt.o)
+                              drivers/libdrv.a(ddrtrn_get_ddr_size.o) (ddrtrn_chsel_remap_func)
+drivers/libdrv.a(ddrtrn_hal_ddrc.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_hal_save_reg)
+drivers/libdrv.a(ddrtrn_ddrc_s14.o)
+                              drivers/libdrv.a(ddrtrn_hal_ddrc.o) (ddrtrn_hal_axi_save_func)
+drivers/libdrv.a(ddrtrn_hal_ddrt.o)
+                              drivers/libdrv.a(ddrtrn_get_ddr_size.o) (ddrtrn_hal_ddrt_get_mem_width)
+drivers/libdrv.a(ddrtrn_hal_phy.o)
+                              drivers/libdrv.a(ddrtrn_training_custom.o) (ddrtrn_hal_hw_item_cfg)
+drivers/libdrv.a(ddrtrn_hal_phy_common.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_hal_get_gt_status)
+drivers/libdrv.a(ddrtrn_hal_phy_c28_v200.o)
+                              drivers/libdrv.a(ddrtrn_hal_phy.o) (ddrtrn_hal_phy_rdqs_sync_rdm)
+drivers/libdrv.a(ddrtrn_hal_sysctrl_common.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_hal_version_flag)
+drivers/libdrv.a(ddrtrn_write_leveling.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_wl_func)
+drivers/libdrv.a(ddrtrn_console.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_training_console_if)
+drivers/libdrv.a(ddrtrn_phy.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_set_data)
+drivers/libdrv.a(ddrtrn_gate.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_gating_func)
+drivers/libdrv.a(ddrtrn_ddrc.o)
+                              drivers/libdrv.a(ddrtrn_get_ddr_size.o) (ddrtrn_hal_timing8_trfc_ab_cfg)
+drivers/libdrv.a(ddrtrn_hw.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_hw_dataeye_read)
+drivers/libdrv.a(ddrtrn_dcc.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_dcc_training_func)
+drivers/libdrv.a(ddrtrn_vref.o)
+                              drivers/libdrv.a(ddrtrn_common_ctl.o) (ddrtrn_vref_training_func)
+drivers/libdrv.a(ddrtrn_auto_pd.o)
+                              drivers/libdrv.a(ddrtrn_api_pm.o) (ddrtrn_dmc_auto_power_down_cfg)
+drivers/libdrv.a(ddrtrn_retrain_enable.o)
+                              drivers/libdrv.a(ddrtrn_api_retrain.o) (ddrtrn_retrain_enable)
+drivers/libdrv.a(ddrtrn_common.o)
+                              drivers/libdrv.a(ddrtrn_capacity_adapt.o) (ddrtrn_reg_config)
+drivers/libdrv.a(ddrtrn_dataeye.o)
+                              drivers/libdrv.a(ddrtrn_vref.o) (ddrtrn_dataeye_deskew)
+drivers/libdrv.a(ddrtrn_api_suspend_resume.o)
+                              drivers/libdrv.a(ddrtrn_api_training_item.o) (bsp_ddrtrn_suspend)
+drivers/libdrv.a(ddrtrn_boot.o)
+                              drivers/libdrv.a(ddrtrn_vref.o) (ddrtrn_result_data_save)
+drivers/libdrv.a(ddrtrn_low_freq.o)
+                              drivers/libdrv.a(ddrtrn_training_custom.o) (ddrtrn_low_freq_start)
+drivers/libdrv.a(ddrtrn_suspend_resume.o)
+                              drivers/libdrv.a(ddrtrn_api_suspend_resume.o) (ddrtrn_suspend_store_para)
+drivers/libdrv.a(ddrtrn_hal_auto_pd.o)
+                              drivers/libdrv.a(ddrtrn_auto_pd.o) (ddrtrn_hal_dmc_auto_pd_by_phy)
+drivers/libdrv.a(ddrtrn_hal_ddrt_v2_3.o)
+                              drivers/libdrv.a(ddrtrn_dataeye.o) (ddrtrn_ddrt_check)
+drivers/libdrv.a(ddrtrn_hal_vref.o)
+                              drivers/libdrv.a(ddrtrn_vref.o) (ddrtrn_hal_vref_save_bdl)
+drivers/libdrv.a(ddrtrn_hal_hw.o)
+                              drivers/libdrv.a(ddrtrn_hw.o) (ddrtrn_hal_hw_read_adj)
+drivers/libdrv.a(ddrtrn_hal_dataeye.o)
+                              drivers/libdrv.a(ddrtrn_dataeye.o) (ddrtrn_hal_dataeye_get_dm)
+drivers/libdrv.a(ddrtrn_hal_dcc.o)
+                              drivers/libdrv.a(ddrtrn_dcc.o) (ddrtrn_hal_dcc_get_ioctl21)
+drivers/libdrv.a(ddrtrn_adjust.o)
+                              drivers/libdrv.a(ddrtrn_dataeye.o) (ddrtrn_adjust_dataeye)
+drivers/libdrv.a(ddrtrn_ddrt.o)
+                              drivers/libdrv.a(ddrtrn_vref.o) (ddrtrn_ddrt_init)
+drivers/libdrv.a(ddrtrn_hal_adjust.o)
+                              drivers/libdrv.a(ddrtrn_adjust.o) (ddrtrn_hal_adjust_get_average)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD boot/backup.o
+LOAD boot/lpds.o
+LOAD boot/cipher.o
+LOAD boot/board_type.o
+LOAD boot/flash.o
+LOAD boot/main.o
+LOAD boot/checkup.o
+LOAD common/lib.o
+LOAD common/crc.o
+LOAD common/malloc.o
+LOAD common/timer.o
+LOAD boot/start.o
+                0x0000000004022e00                . = 0x4022e00
+                0x0000000004022e00                . = ALIGN (0x8)
+
+.text           0x0000000004022e00     0xb878
+ boot/start.o(.text)
+ .text          0x0000000004022e00      0x220 boot/start.o
+                0x0000000004022e00                _start
+ *(.text)
+ .text          0x0000000004023020       0x58 boot/backup.o
+                0x0000000004023020                clean_boot_img_addr_size
+                0x0000000004023034                add_boot_img_size
+                0x000000000402304c                set_verify_backup_img_reg
+                0x0000000004023064                get_verify_backup_img_reg
+ .text          0x0000000004023078      0x1a4 boot/lpds.o
+                0x0000000004023078                enable_lpds_lock
+                0x00000000040230d4                set_low_power_mode
+                0x00000000040230ec                get_low_power_mode
+                0x0000000004023100                clear_lpds
+                0x0000000004023148                lpds_hash_get
+                0x00000000040231a4                verify_all_lpds_data
+                0x00000000040231fc                calculate_all_lpds_data
+ .text          0x000000000402321c      0x750 boot/cipher.o
+                0x000000000402321c                decrypt_data
+                0x00000000040235a0                calc_hash
+                0x00000000040236a0                store_hash_to_lpds
+                0x000000000402370c                verify_signature
+                0x0000000004023904                dma_copy
+ .text          0x000000000402396c       0xd0 boot/board_type.o
+                0x000000000402396c                build_board_type_frame
+                0x0000000004023a08                get_board_param_index
+ .text          0x0000000004023a3c      0x4f4 boot/flash.o
+                0x0000000004023a80                get_ree_key_and_paras_info_from_device
+                0x0000000004023b68                get_paras_data_from_flash
+                0x0000000004023d78                get_uboot_info_from_flash
+                0x0000000004023e50                get_uboot_code_from_flash
+ .text          0x0000000004023f30      0xf48 boot/main.o
+                0x000000000402402c                stack_chk_guard_setup
+                0x0000000004024078                err_print
+                0x000000000402416c                __stack_chk_fail
+                0x00000000040241e8                sram_to_npu_info
+                0x00000000040241f4                sys_watchdog_enable
+                0x0000000004024208                main_entry
+ .text          0x0000000004024e78     0x1300 boot/checkup.o
+                0x0000000004024fdc                count_bit_set
+                0x0000000004025090                get_gsl_code_info_addr
+                0x000000000402509c                get_gsl_code_addr
+                0x00000000040250a8                get_gsl_code_area_len
+                0x00000000040250b8                get_gsl_heap_addr
+                0x00000000040250e8                get_gsl_heap_len
+                0x00000000040250f0                get_ree_key_area_addr
+                0x0000000004025104                get_ddr_param_info_addr
+                0x0000000004025118                get_ddr_param_data_addr
+                0x000000000402512c                get_uboot_info_download_ddr_addr
+                0x0000000004025134                get_uboot_code_ddr_addr
+                0x0000000004025140                get_uboot_code_size
+                0x000000000402514c                get_uboot_entrypoint_ddr_addr
+                0x0000000004025158                hash_compare
+                0x0000000004025254                secure_verify_area
+                0x00000000040253d8                lpds_hash_cmp
+                0x0000000004025484                get_ree_verify_enable_flag
+                0x0000000004025498                get_tee_verify_enable_flag
+                0x00000000040254a8                get_tp_verify_enable_flag
+                0x00000000040254bc                handle_ree_key_area
+                0x0000000004025634                get_ddr_param_len
+                0x000000000402564c                get_ddr_param_data_end_addr
+                0x0000000004025678                get_ddr_param_cnt
+                0x0000000004025690                handle_ddr_param_info
+                0x00000000040258b0                handle_ddr_param
+                0x000000000402597c                handle_uboot_info
+                0x0000000004025ae4                handle_uboot_code
+                0x0000000004025be0                handle_tee_key
+                0x0000000004025cf0                handle_tee_info
+                0x0000000004025eb4                handle_atf_code
+                0x0000000004026018                handle_tee_code
+ .text          0x0000000004026178        0x0 common/lib.o
+ .text          0x0000000004026178       0x38 common/crc.o
+                0x0000000004026178                cal_crc_perbyte
+ .text          0x00000000040261b0      0x1d8 common/malloc.o
+                0x00000000040261b0                malloc_init
+                0x00000000040262a4                malloc
+                0x0000000004026320                free
+ .text          0x0000000004026388        0x8 common/timer.o
+                0x0000000004026388                timer_get_divider
+ .text          0x0000000004026390      0x124 drivers/libdrv.a(otp.o)
+                0x0000000004026390                is_ree_verify_enable
+                0x00000000040263b4                is_tp_verify_enable
+                0x00000000040263d8                is_tee_verify_enable
+                0x00000000040263fc                is_soc_tee_enable
+                0x0000000004026420                is_sec_dbg_enable
+                0x0000000004026444                is_sec_dbg_lv_enable
+                0x0000000004026464                is_tee_dec_en_enable
+                0x0000000004026484                is_ree_boot_dec_en_enable
+                0x00000000040264a4                opt_get_boot_backup_enable
+ .text          0x00000000040264b4      0xc2c drivers/libdrv.a(svb.o)
+                0x00000000040267e4                start_svb
+                0x000000000402705c                end_svb
+ .text          0x00000000040270e0      0x1bc drivers/libdrv.a(init_regs.o)
+                0x0000000004027180                init_registers
+ .text          0x000000000402729c        0x4 drivers/libdrv.a(ddrtrn_api_retrain.o)
+                0x000000000402729c                bsp_ddrtrn_retrain_enable
+ .text          0x00000000040272a0       0xe8 drivers/libdrv.a(ddrtrn_api_training_item.o)
+                0x00000000040272a0                bsp_ddrtrn_training_item
+                0x0000000004027338                bsp_ddrtrn_capat_adapt
+ .text          0x0000000004027388        0x4 drivers/libdrv.a(ddrtrn_api_pm.o)
+                0x0000000004027388                bsp_ddrtrn_dmc_auto_power_down_cfg
+ .text          0x000000000402738c      0x194 drivers/libdrv.a(uart.o)
+                0x000000000402738c                send_board_type_to_uart
+ .text          0x0000000004027520      0x310 drivers/libdrv.a(serial_pl011.o)
+                0x0000000004027520                serial_putc
+                0x0000000004027588                serial_puts
+                0x00000000040275e8                serial_tstc
+                0x0000000004027600                serial_getc
+                0x000000000402764c                serial_put_hex
+                0x00000000040276a8                serial_put_dec
+                0x0000000004027720                debug_puts
+                0x0000000004027800                wait_uart_tx_busy_state
+ .text          0x0000000004027830      0x184 drivers/libdrv.a(tzasc.o)
+                0x0000000004027830                tzasc_sec_config_read_back
+                0x00000000040278ac                tzasc_bypass_disable
+                0x00000000040278e0                tzasc_rgn_enable
+                0x000000000402790c                tzasc_set_rgn_map
+                0x0000000004027958                tzasc_set_rgn_attr
+                0x0000000004027984                config_tzasc
+ .text          0x00000000040279b4      0x44c drivers/libdrv.a(share_drivers.o)
+                0x00000000040279b4                uapi_drv_cipher_init
+                0x00000000040279c4                uapi_drv_cipher_deinit
+                0x00000000040279d4                uapi_drv_cipher_create
+                0x00000000040279e4                uapi_drv_cipher_destroy
+                0x00000000040279f4                uapi_drv_cipher_dma_copy
+                0x0000000004027a04                uapi_drv_cipher_set_config
+                0x0000000004027a14                uapi_drv_cipher_attach
+                0x0000000004027a24                uapi_drv_cipher_detach
+                0x0000000004027a34                uapi_drv_cipher_decrypt
+                0x0000000004027a44                uapi_drv_cipher_hash_init
+                0x0000000004027a54                uapi_drv_cipher_hash_update
+                0x0000000004027a64                uapi_drv_cipher_hash_final
+                0x0000000004027a74                uapi_drv_cipher_trng_get_random
+                0x0000000004027a84                uapi_drv_cipher_register_cipher_wait_func
+                0x0000000004027a94                uapi_drv_keyslot_init
+                0x0000000004027aa4                uapi_drv_keyslot_deinit
+                0x0000000004027ab4                uapi_drv_keyslot_create
+                0x0000000004027ac4                uapi_drv_keyslot_destroy
+                0x0000000004027ad4                uapi_drv_klad_create
+                0x0000000004027ae4                uapi_drv_klad_destroy
+                0x0000000004027af4                uapi_drv_klad_attach
+                0x0000000004027b04                uapi_drv_klad_detach
+                0x0000000004027b14                uapi_drv_klad_set_attr
+                0x0000000004027b24                uapi_drv_klad_set_session_key
+                0x0000000004027b34                uapi_drv_klad_set_content_key
+                0x0000000004027b44                uapi_drv_klad_set_clear_key
+                0x0000000004027b54                uapi_drv_klad_rootkey_disable
+                0x0000000004027b64                uapi_drv_otp_read_word
+                0x0000000004027b74                uapi_drv_otp_read_byte
+                0x0000000004027b84                uapi_drv_otp_get_die_id
+                0x0000000004027b94                uapi_drv_pke_init
+                0x0000000004027ba4                uapi_drv_pke_deinit
+                0x0000000004027bb4                uapi_drv_pke_ecdsa_verify
+                0x0000000004027bc4                uapi_drv_pke_sm2_dsa_hash
+                0x0000000004027bd4                uapi_drv_register_func
+                0x0000000004027be4                mmc_init
+                0x0000000004027bf4                mmc_read
+                0x0000000004027c04                is_bootmode
+                0x0000000004027c14                mmc_get_cur_mode
+                0x0000000004027c24                mmc_set_bootup_mode
+                0x0000000004027c34                copy_from_sdio
+                0x0000000004027c44                set_sdio_pos
+                0x0000000004027c54                enable_sdio_dma
+                0x0000000004027c64                self_usb_check
+                0x0000000004027c74                copy_from_usb
+                0x0000000004027c84                usb3_driver_init
+                0x0000000004027c94                send_to_usb
+                0x0000000004027ca4                pl011_putc
+                0x0000000004027cb4                pl011_getc
+                0x0000000004027cc4                pl011_tstc
+                0x0000000004027cd4                serial_init
+                0x0000000004027ce4                log_serial_puts
+                0x0000000004027cf4                copy_from_uart
+                0x0000000004027d04                timer_init
+                0x0000000004027d14                timer_deinit
+                0x0000000004027d24                timer_start
+                0x0000000004027d34                timer_get_val
+                0x0000000004027d44                udelay
+                0x0000000004027d54                mdelay
+                0x0000000004027d64                watchdog_enable
+                0x0000000004027d74                watchdog_disable
+                0x0000000004027d84                watchdog_feed
+                0x0000000004027d94                memcmp_ss
+                0x0000000004027da4                memcpy_ss
+                0x0000000004027db4                memset_ss
+                0x0000000004027dc4                memcpy_s
+                0x0000000004027dd4                memset_s
+                0x0000000004027de4                save_cur_point_syscnt
+                0x0000000004027df4                self_sdio_check
+ .text          0x0000000004027e00      0x14c drivers/libdrv.a(ipc.o)
+                0x0000000004027e00                ipc_send_msg
+                0x0000000004027e88                ipc_recv_msg
+ .text          0x0000000004027f4c      0x2b0 drivers/libdrv.a(gpll.o)
+                0x0000000004027f64                get_ddr_scrub_and_gpll_switch
+                0x0000000004027f78                bsp_gpll_config
+ .text          0x00000000040281fc      0x3e4 drivers/libdrv.a(ddrtrn_common_ctl.o)
+                0x00000000040281fc                ddrtrn_training_boot_func
+                0x00000000040282c0                ddrtrn_training_by_dmc
+                0x00000000040282e4                ddrtrn_training_by_rank
+                0x00000000040283bc                ddrtrn_training_by_phy
+                0x0000000004028490                ddrtrn_training_all
+                0x00000000040284fc                ddrtrn_sw_training_func
+                0x00000000040285b8                ddrtrn_hw_training_func
+                0x00000000040285bc                ddrtrn_sw_training_if
+                0x00000000040285d8                ddrtrn_hw_training_if
+                0x00000000040285dc                ddrtrn_trace
+ .text          0x00000000040285e0      0x188 drivers/libdrv.a(ddrtrn_hal_context.o)
+                0x00000000040285e0                ddrtrn_hal_get_phy
+                0x00000000040285f4                ddrtrn_hal_get_ctx
+                0x0000000004028608                ddrtrn_hal_set_cfg_addr
+                0x0000000004028624                ddrtrn_hal_cfg_init
+ .text          0x0000000004028768      0x1a4 drivers/libdrv.a(ddrtrn_training_custom.o)
+                0x0000000004028768                ddrtrn_hal_cmd_prepare_copy
+                0x000000000402876c                ddrtrn_hal_cmd_site_save
+                0x0000000004028770                ddrtrn_hal_cmd_site_restore
+                0x0000000004028774                ddrtrn_hal_boot_cmd_save
+                0x0000000004028810                ddrtrn_hal_boot_cmd_restore
+                0x0000000004028858                ddrtrn_hw_training_init
+ .text          0x000000000402890c      0x59c drivers/libdrv.a(ddrtrn_get_ddr_size.o)
+                0x0000000004028ae4                ddrtrn_capat_adapt_func
+ .text          0x0000000004028ea8      0x188 drivers/libdrv.a(ddrtrn_capacity_adapt.o)
+                0x0000000004028ea8                ddrtrn_chsel_remap_func
+                0x0000000004028f40                ddrtrn_capat_adpat_cfg_nonlpddr4
+                0x0000000004028fc8                ddrtrn_capat_adpat_cfg_lpddr4
+ .text          0x0000000004029030      0x450 drivers/libdrv.a(ddrtrn_hal_ddrc.o)
+                0x0000000004029070                ddrtrn_hal_set_timing
+                0x00000000040290a0                ddrtrn_hal_ddrc_get_bank_group
+                0x00000000040290cc                ddrtrn_hal_save_reg
+                0x00000000040291dc                ddrtrn_hal_restore_reg
+                0x0000000004029270                ddrtrn_hal_training_switch_axi
+                0x0000000004029284                ddrtrn_hal_ddrc_easr
+                0x000000000402930c                ddrtrn_hal_save_timing
+                0x0000000004029388                ddrtrn_hal_dmc_get_sref_cfg
+                0x00000000040293a0                ddrtrn_hal_dmc_set_sref_cfg
+                0x00000000040293bc                ddrtrn_hal_phy_get_byte_num
+                0x00000000040293dc                ddrtrn_hal_get_rank_size
+                0x0000000004029428                ddrtrn_hal_axi_special_intlv_en
+                0x0000000004029440                ddrtrn_hal_timing8_trfc_ab_cfg_by_dmc
+ .text          0x0000000004029480      0x1b0 drivers/libdrv.a(ddrtrn_ddrc_s14.o)
+                0x0000000004029480                ddrtrn_hal_axi_save_func
+                0x00000000040294b4                ddrtrn_hal_axi_restore_func
+                0x00000000040294e0                ddrtrn_hal_axi_chsel_remap_func
+                0x0000000004029530                ddrtrn_hal_dmc_sfc_cmd_write
+                0x000000000402953c                ddrtrn_hal_dmc_sfc_bank_write
+                0x0000000004029548                ddrtrn_hal_axi_switch_func
+                0x00000000040295d0                ddrtrn_hal_rnkvol_save_func
+                0x00000000040295e0                ddrtrn_hal_rnkvol_restore_func
+                0x00000000040295f0                ddrtrn_hal_rnkvol_set_func
+ .text          0x0000000004029630       0x48 drivers/libdrv.a(ddrtrn_hal_ddrt.o)
+                0x0000000004029630                ddrt_reg_read
+                0x000000000402963c                ddrt_reg_write
+                0x0000000004029648                ddrtrn_hal_ddrt_get_mem_width
+                0x0000000004029668                ddrtrn_hal_ddrt_get_addr
+ .text          0x0000000004029678     0x100c drivers/libdrv.a(ddrtrn_hal_phy.o)
+                0x000000000402970c                ddrtrn_hal_phy_get_dq_bdl
+                0x0000000004029788                ddrtrn_hal_hw_item_cfg
+                0x00000000040297d0                ddrtrn_hal_sw_item_cfg
+                0x0000000004029818                ddrtrn_hal_check_bypass
+                0x0000000004029838                ddrtrn_hal_phy_reset
+                0x0000000004029854                ddrtrn_hal_phy_cfg_update
+                0x000000000402988c                ddrtrn_hal_ck_cfg
+                0x00000000040298b0                ddrtrn_hal_phy_set_dq_bdl
+                0x0000000004029954                ddrtrn_hal_switch_rank_all_phy
+                0x00000000040299a4                ddrtrn_hal_adjust_get_val
+                0x0000000004029a10                ddrtrn_hal_adjust_set_val
+                0x0000000004029ad4                ddrtrn_hal_get_dly_value
+                0x0000000004029b24                ddrtrn_hal_restore_dly_value
+                0x0000000004029b5c                ddrtrn_hal_wdqs_bdl2phase
+                0x0000000004029c44                ddrtrn_hal_training_adjust_wdq
+                0x0000000004029f0c                ddrtrn_hal_training_adjust_wdqs
+                0x000000000402a234                ddrtrn_hal_training_delay
+                0x000000000402a248                ddrtrn_hal_training_stat
+                0x000000000402a2c8                ddrtrn_hal_rdqs_sync_rank_rdq
+                0x000000000402a3b4                ddrtrn_hal_rdqbdl_adj
+                0x000000000402a4dc                ddrtrn_hal_rdqs_sync
+                0x000000000402a56c                ddrtrn_hal_save_rdqbdl
+                0x000000000402a5f8                ddrtrn_hal_restore_rdqbdl
+ .text          0x000000000402a684       0x8c drivers/libdrv.a(ddrtrn_hal_phy_common.o)
+                0x000000000402a684                ddrtrn_hal_get_gt_status
+                0x000000000402a694                ddrtrn_hal_get_trfc_ctrl_val
+                0x000000000402a6a0                ddrtrn_hal_set_trfc_ctrl
+                0x000000000402a6ac                ddrtrn_hal_get_misc_val
+                0x000000000402a6b8                ddrtrn_hal_set_misc_val
+                0x000000000402a6c4                ddrtrn_hal_get_trfc_threshold1_val
+                0x000000000402a6d0                ddrtrn_hal_get_dmsel
+                0x000000000402a6dc                ddrtrn_hal_get_phyctrl0
+                0x000000000402a6e8                ddrtrn_hal_read_repeatedly
+                0x000000000402a6fc                ddrtrn_hal_enable_rdqs_anti_aging
+ .text          0x000000000402a710       0xdc drivers/libdrv.a(ddrtrn_hal_phy_c28_v200.o)
+                0x000000000402a710                ddrtrn_hal_vref_get_host_max
+                0x000000000402a728                ddrtrn_hal_vref_phy_host_get
+                0x000000000402a758                ddrtrn_hal_vref_phy_dram_get
+                0x000000000402a770                ddrtrn_hal_phy_rdqs_sync_rdm
+                0x000000000402a774                ddrtrn_hal_dqsswap_save_func
+                0x000000000402a788                ddrtrn_hal_dqsswap_restore_func
+                0x000000000402a790                ddrtrn_hal_phy_switch_rank
+ .text          0x000000000402a7ec       0xdc drivers/libdrv.a(ddrtrn_hal_sysctrl_common.o)
+                0x000000000402a7ec                ddrtrn_hal_get_sysctrl_cfg
+                0x000000000402a7fc                ddrtrn_hal_set_sysctrl_cfg
+                0x000000000402a80c                ddrtrn_hal_version_flag
+                0x000000000402a824                ddrtrn_hal_check_sw_item
+                0x000000000402a858                ddrtrn_hal_check_not_dcc_item
+                0x000000000402a898                ddrtrn_hal_set_adjust
+                0x000000000402a8a8                ddrtrn_hal_get_adjust
+                0x000000000402a8b8                ddrtrn_hal_clear_sysctrl_stat_reg
+ .text          0x000000000402a8c8        0x8 drivers/libdrv.a(ddrtrn_write_leveling.o)
+                0x000000000402a8c8                ddrtrn_wl_func
+ .text          0x000000000402a8d0       0x10 drivers/libdrv.a(ddrtrn_console.o)
+                0x000000000402a8d0                ddrtrn_training_console
+                0x000000000402a8d8                ddrtrn_training_console_if
+ .text          0x000000000402a8e0      0x118 drivers/libdrv.a(ddrtrn_phy.o)
+                0x000000000402a8e0                ddrtrn_copy_data
+                0x000000000402a904                ddrtrn_set_data
+                0x000000000402a924                ddrtrn_rdq_offset_cfg_by_phy
+ .text          0x000000000402a9f8        0x8 drivers/libdrv.a(ddrtrn_gate.o)
+                0x000000000402a9f8                ddrtrn_gating_func
+ .text          0x000000000402aa00      0x244 drivers/libdrv.a(ddrtrn_ddrc.o)
+                0x000000000402aa6c                ddrtrn_sref_cfg_save
+                0x000000000402aab0                ddrtrn_sref_cfg_restore
+                0x000000000402aaec                ddrtrn_training_ctrl_easr
+                0x000000000402ab4c                ddrtrn_training_restore_timing
+                0x000000000402ab8c                ddrtrn_hal_timing8_trfc_ab_cfg
+ .text          0x000000000402ac44      0x398 drivers/libdrv.a(ddrtrn_hw.o)
+                0x000000000402ac70                ddrtrn_hw_dataeye_read
+                0x000000000402acd0                ddrtrn_hw_training_by_phy
+                0x000000000402af70                ddrtrn_hw_training
+ .text          0x000000000402afdc      0x820 drivers/libdrv.a(ddrtrn_dcc.o)
+                0x000000000402b038                ddrtrn_sref_cfg
+                0x000000000402b74c                ddrtrn_training_break_point
+                0x000000000402b750                ddrtrn_dcc_training_func
+ .text          0x000000000402b7fc      0x500 drivers/libdrv.a(ddrtrn_vref.o)
+                0x000000000402baf4                ddrtrn_vref_training
+                0x000000000402bc48                ddrtrn_vref_training_func
+ .text          0x000000000402bcfc       0x18 drivers/libdrv.a(ddrtrn_auto_pd.o)
+                0x000000000402bcfc                ddrtrn_dmc_auto_power_down_cfg
+ .text          0x000000000402bd14       0xb8 drivers/libdrv.a(ddrtrn_retrain_enable.o)
+                0x000000000402bd14                ddrtrn_retrain_enable
+ .text          0x000000000402bdcc      0x190 drivers/libdrv.a(ddrtrn_common.o)
+                0x000000000402bdcc                ddrtrn_reg_config
+                0x000000000402bdf4                ddrtrn_save_rdqbdl_phy
+                0x000000000402bea8                ddrtrn_restore_rdqbdl_phy
+ .text          0x000000000402bf5c      0x568 drivers/libdrv.a(ddrtrn_dataeye.o)
+                0x000000000402bf5c                ddrtrn_dataeye_check_dq
+                0x000000000402c048                ddrtrn_dataeye_deskew
+                0x000000000402c39c                ddrtrn_dataeye_training
+                0x000000000402c434                ddrtrn_dataeye_training_func
+ .text          0x000000000402c4c4       0x18 drivers/libdrv.a(ddrtrn_api_suspend_resume.o)
+                0x000000000402c4c4                bsp_ddrtrn_resume
+                0x000000000402c4c8                bsp_ddrtrn_suspend
+ .text          0x000000000402c4dc       0x1c drivers/libdrv.a(ddrtrn_boot.o)
+                0x000000000402c4dc                ddrtrn_result_data_save
+                0x000000000402c4e0                ddrtrn_lpca_data_save
+                0x000000000402c4e4                ddrtrn_ddrt_get_test_addr
+                0x000000000402c4ec                ddrtrn_training_error
+                0x000000000402c4f0                ddrtrn_training_success
+                0x000000000402c4f4                ddrtrn_training_start
+ .text          0x000000000402c4f8      0xbfc drivers/libdrv.a(ddrtrn_low_freq.o)
+                0x000000000402c88c                ddrtrn_low_freq_start
+ .text          0x000000000402d0f4        0xc drivers/libdrv.a(ddrtrn_suspend_resume.o)
+                0x000000000402d0f4                ddrtrn_suspend_store_para
+                0x000000000402d0f8                ddrtrn_resume
+ .text          0x000000000402d100       0x40 drivers/libdrv.a(ddrtrn_hal_auto_pd.o)
+                0x000000000402d100                ddrtrn_hal_dmc_auto_pd_by_phy
+ .text          0x000000000402d140      0x234 drivers/libdrv.a(ddrtrn_hal_ddrt_v2_3.o)
+                0x000000000402d140                ddrtrn_ddrt_check
+ .text          0x000000000402d374      0x368 drivers/libdrv.a(ddrtrn_hal_vref.o)
+                0x000000000402d430                ddrtrn_hal_vref_save_bdl
+                0x000000000402d4e8                ddrtrn_hal_vref_restore_bdl
+                0x000000000402d594                ddrtrn_hal_vref_status_set
+ .text          0x000000000402d6dc      0x87c drivers/libdrv.a(ddrtrn_hal_hw.o)
+                0x000000000402d75c                ddrtrn_hal_hw_read_adj
+                0x000000000402d760                ddrtrn_hal_hw_rdqs_offset_cfg
+                0x000000000402d79c                ddrtrn_hal_training_get_rdqs
+                0x000000000402d7e8                ddrtrn_hal_training_set_rdqs
+                0x000000000402d834                ddrtrn_hal_hw_training_process
+                0x000000000402d8e0                ddrtrn_hal_hw_training_normal_conf
+                0x000000000402dbdc                ddrtrn_hal_hw_dataeye_adapt
+                0x000000000402dce0                ddrtrn_hal_hw_dataeye_vref_set
+                0x000000000402dd64                ddrtrn_hal_hw_clear_rdq
+                0x000000000402ddc0                ddrtrn_hal_hw_restore_rdqsbdl
+                0x000000000402de44                ddrtrn_hal_hw_save_rdqsbdl
+                0x000000000402de84                ddrtrn_ac_oe_enable
+                0x000000000402def8                ddrtrn_dummy_io_oe_enable
+ .text          0x000000000402df58       0xac drivers/libdrv.a(ddrtrn_hal_dataeye.o)
+                0x000000000402df58                ddrtrn_hal_dataeye_get_dm
+                0x000000000402df9c                ddrtrn_hal_dataeye_set_dq_sum
+                0x000000000402dfe4                ddrtrn_hal_get_dq_type
+                0x000000000402dff4                ddrtrn_hal_set_dq_type
+ .text          0x000000000402e004       0x94 drivers/libdrv.a(ddrtrn_hal_dcc.o)
+                0x000000000402e004                ddrtrn_hal_dcc_get_ioctl21
+                0x000000000402e024                ddrtrn_hal_dcc_set_ioctl21
+                0x000000000402e048                ddrtrn_hal_dcc_get_gated_bypass
+                0x000000000402e04c                ddrtrn_hal_dcc_set_gated_bypass
+                0x000000000402e050                ddrtrn_hal_dcc_rdet_enable
+                0x000000000402e070                ddrtrn_hal_dcc_get_dxnrdbound
+ .text          0x000000000402e098      0x23c drivers/libdrv.a(ddrtrn_adjust.o)
+                0x000000000402e220                ddrtrn_adjust_dataeye
+ .text          0x000000000402e2d4      0x2cc drivers/libdrv.a(ddrtrn_ddrt.o)
+                0x000000000402e2d4                ddrtrn_ddrt_init
+                0x000000000402e430                ddrtrn_ddrt_test
+ .text          0x000000000402e5a0       0xd8 drivers/libdrv.a(ddrtrn_hal_adjust.o)
+                0x000000000402e5a0                ddrtrn_hal_adjust_get_average
+                0x000000000402e64c                ddrtrn_hal_adjust_get_rdqs
+
+.iplt           0x000000000402e678        0x0
+ .iplt          0x000000000402e678        0x0 boot/lpds.o
+
+.vectors        0x000000000402e800      0x550
+ .vectors       0x000000000402e800      0x550 boot/start.o
+                0x000000000402e800                sync_exception_sp_el0
+                0x000000000402e800                runtime_exceptions
+                0x000000000402e880                irq_sp_el0
+                0x000000000402e900                fiq_sp_el0
+                0x000000000402e980                serror_sp_el0
+                0x000000000402ea00                sync_exception_sp_elx
+                0x000000000402ea80                irq_sp_elx
+                0x000000000402eb00                fiq_sp_elx
+                0x000000000402eb80                serror_sp_elx
+                0x000000000402ec00                sync_exception_aarch64
+                0x000000000402ed50                . = ALIGN (0x8)
+
+.rodata         0x000000000402ed50      0x144
+ *(.rodata)
+ .rodata        0x000000000402ed50      0x100 boot/cipher.o
+ .rodata        0x000000000402ee50       0x20 common/crc.o
+                0x000000000402ee50                g_crc_ta
+ .rodata        0x000000000402ee70       0x24 common/malloc.o
+ *(.version)
+
+.rodata.str1.1  0x000000000402ee94      0x28b
+ .rodata.str1.1
+                0x000000000402ee94       0x29 boot/lpds.o
+ .rodata.str1.1
+                0x000000000402eebd       0x11 boot/cipher.o
+ .rodata.str1.1
+                0x000000000402eece       0x1d boot/board_type.o
+ .rodata.str1.1
+                0x000000000402eeeb      0x13c boot/main.o
+ .rodata.str1.1
+                0x000000000402f027       0xca boot/checkup.o
+ .rodata.str1.1
+                0x000000000402f0f1       0x19 drivers/libdrv.a(svb.o)
+ .rodata.str1.1
+                0x000000000402f10a       0x19 drivers/libdrv.a(serial_pl011.o)
+                                          0x3 (size before relaxing)
+ .rodata.str1.1
+                0x000000000402f10a       0x15 drivers/libdrv.a(ddrtrn_low_freq.o)
+
+.eh_frame       0x000000000402f120       0x6c
+ .eh_frame      0x000000000402f120       0x6c boot/main.o
+                                         0x70 (size before relaxing)
+
+.rela.dyn       0x000000000402f190        0x0
+ .rela.iplt     0x000000000402f190        0x0 boot/lpds.o
+ .rela.text     0x000000000402f190        0x0 boot/lpds.o
+                0x000000000402f190                . = ALIGN (0x8)
+
+.data           0x000000000402f190      0x3d8
+ *(.data)
+ .data          0x000000000402f190        0x0 boot/backup.o
+ .data          0x000000000402f190        0x0 boot/lpds.o
+ .data          0x000000000402f190        0x0 boot/cipher.o
+ .data          0x000000000402f190        0x0 boot/board_type.o
+ .data          0x000000000402f190        0x0 boot/flash.o
+ .data          0x000000000402f190        0x0 boot/main.o
+ .data          0x000000000402f190        0x0 boot/checkup.o
+ .data          0x000000000402f190        0x0 common/lib.o
+ .data          0x000000000402f190        0x0 common/crc.o
+ .data          0x000000000402f190        0x0 common/malloc.o
+ .data          0x000000000402f190        0x0 common/timer.o
+ .data          0x000000000402f190        0x0 boot/start.o
+ .data          0x000000000402f190        0x0 drivers/libdrv.a(otp.o)
+ .data          0x000000000402f190      0x168 drivers/libdrv.a(svb.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(init_regs.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(ddrtrn_api_retrain.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(ddrtrn_api_training_item.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(ddrtrn_api_pm.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(uart.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(serial_pl011.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(tzasc.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(share_drivers.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(ipc.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(gpll.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(ddrtrn_common_ctl.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(ddrtrn_hal_context.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(ddrtrn_training_custom.o)
+ .data          0x000000000402f2f8        0x0 drivers/libdrv.a(ddrtrn_get_ddr_size.o)
+ .data          0x000000000402f2f8      0x270 drivers/libdrv.a(ddrtrn_capacity_adapt.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_ddrc.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_ddrc_s14.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_ddrt.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_phy.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_phy_common.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_phy_c28_v200.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_sysctrl_common.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_write_leveling.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_console.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_phy.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_gate.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_ddrc.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hw.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_dcc.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_vref.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_auto_pd.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_retrain_enable.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_common.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_dataeye.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_api_suspend_resume.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_boot.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_low_freq.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_suspend_resume.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_auto_pd.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_ddrt_v2_3.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_vref.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_hw.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_dataeye.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_dcc.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_adjust.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_ddrt.o)
+ .data          0x000000000402f568        0x0 drivers/libdrv.a(ddrtrn_hal_adjust.o)
+
+.igot.plt       0x000000000402f568        0x0
+ .igot.plt      0x000000000402f568        0x0 boot/lpds.o
+                0x000000000402f800                . = ALIGN (0x400)
+                0x000000000402f800                _end = .
+                0x0000000004021a80                . = 0x4021a80
+                0x0000000004021a80                __bss_start = .
+
+.bss            0x0000000004021a80      0x160
+ *(.bss)
+ .bss           0x0000000004021a80        0x0 boot/backup.o
+ .bss           0x0000000004021a80        0x0 boot/lpds.o
+ .bss           0x0000000004021a80       0x20 boot/cipher.o
+                0x0000000004021a80                hash_verify_buf
+ .bss           0x0000000004021aa0        0x0 boot/board_type.o
+ .bss           0x0000000004021aa0        0x0 boot/flash.o
+ .bss           0x0000000004021aa0       0x20 boot/main.o
+                0x0000000004021aa0                __stack_chk_guard
+                0x0000000004021ab8                jump_addr
+ .bss           0x0000000004021ac0        0x0 boot/checkup.o
+ .bss           0x0000000004021ac0        0x0 common/lib.o
+ .bss           0x0000000004021ac0        0x0 common/crc.o
+ .bss           0x0000000004021ac0      0x120 common/malloc.o
+ .bss           0x0000000004021be0        0x0 common/timer.o
+ .bss           0x0000000004021be0        0x0 boot/start.o
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(otp.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(svb.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(init_regs.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_api_retrain.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_api_training_item.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_api_pm.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(uart.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(serial_pl011.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(tzasc.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(share_drivers.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ipc.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(gpll.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_common_ctl.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_context.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_training_custom.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_get_ddr_size.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_capacity_adapt.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_ddrc.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_ddrc_s14.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_ddrt.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_phy.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_phy_common.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_phy_c28_v200.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_sysctrl_common.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_write_leveling.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_console.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_phy.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_gate.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_ddrc.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hw.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_dcc.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_vref.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_auto_pd.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_retrain_enable.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_common.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_dataeye.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_api_suspend_resume.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_boot.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_low_freq.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_suspend_resume.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_auto_pd.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_ddrt_v2_3.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_vref.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_hw.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_dataeye.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_dcc.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_adjust.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_ddrt.o)
+ .bss           0x0000000004021be0        0x0 drivers/libdrv.a(ddrtrn_hal_adjust.o)
+                0x0000000004021be0                . = ALIGN (0x8)
+                0x0000000004021be0                __bss_end = .
+Address of section .text set to 0x4022e00
+LOAD drivers/libdrv.a
+OUTPUT(pub/gsl elf64-littleaarch64)
+LOAD linker stubs
+
+.comment        0x0000000000000000       0x43
+ .comment       0x0000000000000000       0x43 boot/backup.o
+                                         0x44 (size before relaxing)
+ .comment       0x0000000000000043       0x44 boot/lpds.o
+ .comment       0x0000000000000043       0x44 boot/cipher.o
+ .comment       0x0000000000000043       0x44 boot/board_type.o
+ .comment       0x0000000000000043       0x44 boot/flash.o
+ .comment       0x0000000000000043       0x44 boot/main.o
+ .comment       0x0000000000000043       0x44 boot/checkup.o
+ .comment       0x0000000000000043       0x44 common/lib.o
+ .comment       0x0000000000000043       0x44 common/crc.o
+ .comment       0x0000000000000043       0x44 common/malloc.o
+ .comment       0x0000000000000043       0x44 common/timer.o
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(otp.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(svb.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(init_regs.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_api_retrain.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_api_training_item.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_api_pm.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(uart.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(serial_pl011.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(tzasc.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(share_drivers.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ipc.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(gpll.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_common_ctl.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_context.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_training_custom.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_get_ddr_size.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_capacity_adapt.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_ddrc.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_ddrc_s14.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_ddrt.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_phy.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_phy_common.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_phy_c28_v200.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_sysctrl_common.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_write_leveling.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_console.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_phy.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_gate.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_ddrc.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hw.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_dcc.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_vref.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_auto_pd.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_retrain_enable.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_common.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_dataeye.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_api_suspend_resume.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_boot.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_low_freq.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_suspend_resume.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_auto_pd.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_ddrt_v2_3.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_vref.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_hw.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_dataeye.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_dcc.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_adjust.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_ddrt.o)
+ .comment       0x0000000000000043       0x44 drivers/libdrv.a(ddrtrn_hal_adjust.o)
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 boot/backup.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 boot/lpds.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 boot/cipher.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 boot/board_type.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 boot/flash.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 boot/main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 boot/checkup.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 common/lib.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 common/crc.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 common/malloc.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 common/timer.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(otp.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(svb.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(init_regs.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_api_retrain.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_api_training_item.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_api_pm.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(uart.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(serial_pl011.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(tzasc.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(share_drivers.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ipc.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(gpll.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_common_ctl.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_context.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_training_custom.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_get_ddr_size.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_capacity_adapt.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_ddrc.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_ddrc_s14.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_ddrt.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_phy.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_phy_common.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_phy_c28_v200.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_sysctrl_common.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_write_leveling.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_console.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_phy.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_gate.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_ddrc.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hw.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_dcc.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_vref.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_auto_pd.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_retrain_enable.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_common.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_dataeye.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_api_suspend_resume.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_boot.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_low_freq.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_suspend_resume.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_auto_pd.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_ddrt_v2_3.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_vref.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_hw.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_dataeye.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_dcc.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_adjust.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_ddrt.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 drivers/libdrv.a(ddrtrn_hal_adjust.o)
+
+.debug_frame    0x0000000000000000       0xe8
+ .debug_frame   0x0000000000000000       0xe8 boot/start.o

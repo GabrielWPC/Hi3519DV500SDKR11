@@ -1,0 +1,1 @@
+export PARAM_FILE = $(OPTEE_SAMPLE_DIR)/../../../Makefile.param

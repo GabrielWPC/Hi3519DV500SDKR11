@@ -1,0 +1,96 @@
+{
+    "security_mode": "Secure",
+    "algorithm": "ECC+SHA256+AES",
+    "start_Flow": "TEE",
+    "TEE_owner": "OEM",
+    "OEM_info": {
+        "oem_msid_ext": "0x00000000",
+        "mask_oem_msid_ext": "0x00000000"
+    },
+    "root_key": {
+        "REE_root_pub_key": "./pub_private_key/ree_root_pub_key.pem",
+        "REE_root_private_key": "./pub_private_key/ree_root_private_key.pem",
+        "TEE_root_pub_key": "./pub_private_key/tee_root_pub_key.pem",
+        "TEE_root_private_key": "./pub_private_key/tee_root_private_key.pem"
+    },
+    "CFCT": {
+        "CFCT_data_enc_flag": "0x0"
+    },
+    "GSL": {
+        "GSL_key_area": {
+            "GSL_key_version_ext": "0x00000000",
+            "mask_GSL_key_version_ext": "0x00000000",
+            "GSL_external_public_key": "./pub_private_key/gsl_external_public_key.pem",
+            "GSL_external_private_key": "./pub_private_key/gsl_external_private_key.pem"
+        },
+        "GSL_Info_area": {
+            "GSL_code_version_ext": "0x00000000",
+            "mask_GSL_code_version_ext": "0x00000000",
+            "GSL_code_enc_flag": "0x3C7896E1",
+            "GSL_code_FlashReadClk": "0x0"
+        },
+        "GSL_code_area": {
+            "GSL_code_file": "./input/gsl.bin"
+        }
+    },
+    "REE_boot": {
+        "uboot_key_area": {
+            "uboot_key_version_ext": "0x00000000",
+            "mask_uboot_key_version_ext": "0x00000000",
+            "uboot_external_public_key": "./pub_private_key/uboot_external_public_key.pem",
+            "uboot_external_private_key": "./pub_private_key/uboot_external_private_key.pem"
+        },
+        "boot_params_Info": {
+            "boot_param_version_ext": "0x00000000",
+            "mask_boot_param_version_ext": "0x00000000",
+            "single_param_size": "0x3000",
+            "boot_param_total_num": "0x8",
+            "boot_param_file0": "/* path of param0 file used for building muty boot table image */",
+            "boot_param_file1": "/* path of param1 file used for building muty boot table image */",
+            "boot_param_file2": "/* path of param2 file used for building muty boot table image */",
+            "boot_param_file3": "/* path of param3 file used for building muty boot table image */",
+            "boot_param_file4": "/* path of param4 file used for building muty boot table image */",
+            "boot_param_file5": "/* path of param5 file used for building muty boot table image */",
+            "boot_param_file6": "/* path of param6 file used for building muty boot table image */",
+            "boot_param_file7": "./input/reg_info.bin"
+        },
+        "uboot_info_area": {
+            "uboot_version_ext": "0x00000000",
+            "mask_uboot_version_ext": "0x00000000",
+            "uboot_code_enc_flag": "0x3C7896E1",
+            "uboot_entry_point": "0x48700000"
+        },
+        "uboot_area": {
+            "uboot_code_file": "./input/u-boot-original.bin"
+        }
+    },
+    "TEE": {
+        "TEEOS_key_area": {
+            "TEEOS_key_version_ext": "0x00000000",
+            "mask_TEEOS_key_version_ext": "0x00000000",
+            "TEEOS_external_public_key": "./pub_private_key/teeos_external_public_key.pem",
+            "TEEOS_external_private_key": "./pub_private_key/teeos_external_private_key.pem"
+        },
+        "TEEOS_info_area": {
+            "TEEOS_version_ext": "0x00000000",
+            "mask_TEEOS_version_ext": "0x00000000",
+            "TEEOS_ATF_enc_flag": "0x3C7896E1"
+        },
+        "ATF_code_area": {
+            "ATF_code_file": "./input/bl31.bin"
+        },
+        "TEEOS_code_area": {
+            "TEEOS_code_file": "./input/tee.bin"
+        }
+    },
+    "maintenance_mode": {
+        "GSL_key_maintenance_mode": "0x0",
+        "uboot_key_maintenance_mode": "0x0",
+        "TEEOS_key_maintenance_mode": "0x0",
+        "DIE_ID": "0x00000000000000000000000000000000"
+    },
+    "SCS_simulate": {
+        "REE_verify_simulate": "0x0",
+        "TEE_verify_simulate": "0x0"
+    }
+}

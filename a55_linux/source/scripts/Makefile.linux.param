@@ -1,0 +1,56 @@
+# 0 -- gcc | 1 -- LLVM | 2 -- reserved | 3 -- OpenHarmony+LLVM | 4 -- User tool
+ifeq ($(CONFIG_LLVM), y)
+    CVERX=1
+else
+    CVERX=0
+endif
+
+# 1 -- musl | 2 -- glibc | 3 user + musl | 4 -- reserved | 5 Liteos 1.0 | 6 -- Liteos 2.0 | 7 amp+musl | 8 -- amp+glibc
+ifeq ($(LIBC),glibc)
+    CVERY=2
+else
+    CVERY=1
+endif
+
+ifeq ($(FPGA),n)
+    export CVER?=.V$(CVERX)$(CVERY)
+else
+    export CVER?=_fpga.V$(CVERX)$(CVERY)
+endif
+
+##############################################################################
+# Allocated the kernel position
+ifeq ($(MPP_BUILD), y)
+    export KERNEL_ROOT?=/hiwork/Hi3519DV500_SDK_V2.0.1.1/open_source/linux/linux-5.10.y
+else
+    export KERNEL_ROOT?=/hiwork/Hi3519DV500_SDK_V2.0.1.1/open_source/linux/linux-5.10.y
+endif
+export OSDRV_PATH:=$(KERNEL_ROOT)/../../..
+
+##############################################################################
+
+# Define cross compiler
+export CLANG_CROSS :=
+ifeq ($(CONFIG_LLVM), y)
+CLANG_CROSS += LLVM=1 LLVM_IAS=1
+export CC:=clang
+export AR:=llvm-ar
+export STRIP:=llvm-strip
+export OBJCOPY:=llvm-objcopy
+else
+export CC:=$(CROSS)gcc
+export AR:=$(CROSS)ar
+export STRIP:=$(CROSS)strip
+export OBJCOPY:=$(CROSS)objcopy
+endif
+
+export REL_LIB := $(REL_DIR)/lib
+export REL_KO  := $(REL_DIR)/ko
+export REL_OBJ := $(REL_DIR)/obj
+export REL_INI := $(REL_DIR)/init
+
+
+LIBS_LD_CFLAGS += -ldl -rdynamic
+MPP_CFLAGS += -Wno-date-time
+DRV_CFLAGS += -Wno-date-time
+

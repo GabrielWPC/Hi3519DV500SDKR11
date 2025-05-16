@@ -1,0 +1,11 @@
+    {
+    "name": "G-3519DV500 Dev",
+    "image": "gabrielwpc/g-3519dv500-img:v2",
+    "workspaceFolder": "/home/g-3519dv500-dev",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/home/g-3519dv500-dev,type=bind"
+    ],
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    }
+    }

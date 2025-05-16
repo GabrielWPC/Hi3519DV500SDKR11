@@ -1,0 +1,16 @@
+arch=arm
+baudrate=115200
+board=hi3519dv500
+board_name=hi3519dv500
+bootdelay=2
+cpu=armv8
+ethact=gmac0
+loadaddr=0x40080000
+soc=hi3519dv500
+stderr=serial
+stdin=serial
+stdout=serial
+vendor=vendor
+verify=n
+bootargs=mem=132928K console=ttyAMA0,115200 clk_ignore_unused root=/dev/mtdblock4 rootfstype=jffs2 rw mtdparts=sfc:512K(boot),512K(env),1M(teeimg),13M(kernel),8M(rootfs)
+bootcmd=sf probe 0; sf read 0x46000000 0x100000 0x100000; ipcboot teeimg 0x46000000; sf read 0x48000000 0x200000 0xd00000; ipcboot uimgfdt 0x48000000

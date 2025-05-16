@@ -1,0 +1,91 @@
+# Makefile.build.param
+#
+# Only global build param should be defined here.
+# All the variables must be used as "export" and "?=".
+# Otherwise, there will be some errors, when Makefile.build.param is nested.
+
+# Use this file as the following sample,
+# In particular, it has been included in Makefile.param/Makefile.path.param by default.
+# ifeq ($(BUILD_PARAM_FILE), )
+#     BUILD_PARAM_FILE:=../Makefile.build.param
+#     include $(BUILD_PARAM_FILE)
+# endif
+export BUILD_PARAM_FILE
+
+export VER_X ?= 1
+export VER_Y ?= 0
+export VER_Z ?= 0
+export VER_P ?= 0
+export VER_B ?= 10
+
+export PRODUCT      ?= IPC
+export MPP_BUILD    ?= n
+
+export KO_PREFIX?=ot
+export ARCH_DIR?=$(CONFIG_OT_ARCH)
+export EXT_DRV?=$(CONFIG_OT_ARCH)
+export INTER_DRV?=$(CONFIG_OT_ARCH)
+
+export OT_SUBARCH?=$(CONFIG_OT_SUBARCH)
+export OT_CHIP?=$(CONFIG_OT_CHIP_TYPE)
+export ARM_ARCH?=$(CONFIG_ARM_ARCH_TYPE)
+
+# 32bit or 64bit
+ifeq ($(CONFIG_KERNEL_BIT), KERNEL_BIT_32)
+    export ARCH=arm
+else
+    export ARCH=arm64
+endif
+
+export OT_ARCH?=$(CONFIG_OT_ARCH)
+ifeq ($(OT_ARCH), )
+    $(error OT_ARCH not defined! Please check!)
+endif
+
+# uclibc or glibc
+export LIBC?=$(CONFIG_LIBC_TYPE)
+ifeq ($(LIBC), )
+    $(error LIBC not defined! Please check!)
+endif
+
+# linux or liteos
+export OSTYPE?=$(CONFIG_OS_TYPE)
+export KERNEL_NAME?=$(CONFIG_KERNEL_VERSION)
+
+# Whether support the debug information. OT_DEBUG or OT_RELEASE or AXIS
+export OT_RLS_MODE?=$(CONFIG_OT_RLS_MODE)
+
+# cpu type single/big-little
+export CPU_TYPE?=$(CONFIG_CPU_TYPE)
+
+# -g
+export OT_GDB?=$(CONFIG_OT_GDB)
+
+# CROSS
+export CROSS_COMPILE?=$(CONFIG_OT_CROSS)
+export CROSS?=$(CONFIG_OT_CROSS_LIB)
+export ARCH_LIBNAME?=$(CONFIG_OT_SUBARCH)
+
+# FPGA board or not
+ifeq ($(CONFIG_OT_FPGA), y)
+    export FPGA?=y
+else
+    export FPGA?=n
+endif
+
+ifeq ($(FPGA),y)
+    export OT_FPGA:=OT_FPGA
+    export FPGA_FLAG:=1
+    ifeq ($(CONFIG_UMAP6),y)
+        export UMAP:=UMAP6
+    else ifeq ($(CONFIG_UMAP7),y)
+        export UMAP:=UMAP7
+    else ifeq ($(CONFIG_UMAP7P),y)
+        export UMAP:=UMAP7P
+    else
+        export UMAP:=UMAPXXX
+    endif
+else
+    export ASIC_FLAG:=0
+    export OT_FPGA:=OT_XXXX
+endif
