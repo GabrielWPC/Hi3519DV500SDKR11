@@ -1,0 +1,57 @@
+# 编译生成文件
+*.o
+*.a
+*.so
+*.elf
+*.bin
+*.img
+*.map
+*.out
+*.exe
+
+# 编译输出目录
+/build/
+/output/
+/out/
+/debug/
+/release/
+
+# Makefile 缓存文件（不影响原始 Makefile）
+*.d
+*.dep
+
+# CMake 缓存(自己先注释了，再考虑)
+# CMakeFiles/
+# CMakeCache.txt
+# cmake_install.cmake
+
+# 临时文件
+*.swp
+*.swo
+*.swn
+*.tmp
+*~
+.*.sw?
+
+# 日志
+*.log
+
+# Python 脚本缓存
+__pycache__/
+*.pyc
+
+# VSCode 缓存（根据你需要可选）
+.vscode/settings.json
+
+# Dev Container 备份（保留主配置）
+.devcontainer/*-backup*
+
+# 可选：AI 模型结果（你现在可以不加）
+# *.onnx
+# *.tflite
+# *.pb
+# *.h5
+# runs/
+# checkpoints/
+# logs/
+
