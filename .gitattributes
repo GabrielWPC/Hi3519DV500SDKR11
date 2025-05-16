@@ -1,0 +1,14 @@
+# Ensure consistent Git behavior across systems
+* text=auto
+
+# Mark binary files to avoid automatic diff
+*.bin binary
+*.img binary
+*.ext4 binary
+*.tgz binary
+*.so binary
+*.a binary
+*.onnx binary
+*.tflite binary
+*.pb binary
+
