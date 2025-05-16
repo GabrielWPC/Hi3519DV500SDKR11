@@ -1,14 +1,14 @@
 # Ensure consistent Git behavior across systems
 * text=auto
-
 # Mark binary files to avoid automatic diff
-*.bin binary
-*.img binary
-*.ext4 binary
-*.tgz binary
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.img filter=lfs diff=lfs merge=lfs -text
+*.ext4 filter=lfs diff=lfs merge=lfs -text
+*.tgz filter=lfs diff=lfs merge=lfs -text
 *.so binary
 *.a binary
-*.onnx binary
-*.tflite binary
-*.pb binary
-
+*.onnx filter=lfs diff=lfs merge=lfs -text
+*.tflite filter=lfs diff=lfs merge=lfs -text
+*.pb filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+ filter=lfs diff=lfs merge=lfs -text
